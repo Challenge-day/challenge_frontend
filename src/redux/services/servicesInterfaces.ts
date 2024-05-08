@@ -1,9 +1,8 @@
-interface ServicesInterface{
-    error: string | null;
-    isLoading: boolean;
-    openModal: boolean;
-    currentPage: number;
-    modalContent: string;
+interface IServicesInterface {
+  error: string | null;
+  isLoading: boolean;
+  openModal: boolean;
+  modalContent: string;
 }
 
-export default   ServicesInterface
+export default IServicesInterface;
