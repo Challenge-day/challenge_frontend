@@ -3,7 +3,7 @@ import "./App.css";
 function App() {
   return (
     <>
-      <div>Challenge Day test comit</div>
+      <div>Challenge Day test gilka</div>
     </>
   );
 }
