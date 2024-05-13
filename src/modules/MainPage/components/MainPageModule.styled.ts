@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const ContentSection = styled.section`
   width: 100%;
+  min-height: 100vh;
   padding: 20px 15px 15px;
 
   border-radius: 20px;
@@ -10,17 +11,23 @@ export const ContentSection = styled.section`
 `;
 
 export const BalanceContainer = styled.div`
-  background-color: var(--main-blue);
+  background-color: var(--blue-100);
   width: 100%;
   border-radius: 20px;
-  padding: 12px 25px 17px;
+  padding: 12px 20px 17px;
   margin-inline: auto;
 `;
 
 export const ContainerTitle = styled.h1`
   color: var(--main-white);
   font-size: 20px;
-  font-weight: 700;
+  font-weight: 500;
 `;
 
 export const ContainerContent = styled.div``;
+
+export const BalanceAmount = styled.div`
+  font-size: 35px;
+  font-weight: 700;
+  line-height: 100%;
+`;

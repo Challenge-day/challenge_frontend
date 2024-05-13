@@ -36,9 +36,10 @@
 }
 
 :root {
-    --font-family: Montserrat, sans-serif;
+    --font-family: Montserrat;
     line-height: 1.5;
     font-weight: 400;
+    width: 100%;
 
     color-scheme: light dark;
     color: rgba(255, 255, 255, 0.87);
@@ -64,6 +65,10 @@
 
 }
 
+* {
+    font-family: var(--font-family), sans-serif;
+}
+
 main {
     min-height: 100vh;
 }
@@ -87,11 +92,11 @@ input {
 }
 
 body {
-    margin: 0;
-    display: flex;
-    place-items: center;
+    width: 100%;
+    margin: 0 auto;
     min-width: 320px;
     min-height: 100vh;
+    font-size: var(--font-family), sans-serif;
 }
 
 a {
