@@ -1,74 +1,75 @@
 @font-face {
-    font-family: "Montserrat";
-    src: url('./assets/fonts/Montserrat-Regular.woff2') format("woff2");
-    font-weight: normal;
-    font-style: normal;
+	font-family: "Montserrat";
+	src: url('./assets/fonts/Montserrat-Regular.woff2') format("woff2");
+	font-weight: normal;
+	font-style: normal;
 }
 
 @font-face {
-    font-family: "Montserrat";
-    src: url("./assets/fonts/Montserrat-Medium.woff2") format("woff2");
-    font-weight: 500;
-    font-style: normal;
+	font-family: "Montserrat";
+	src: url("./assets/fonts/Montserrat-Medium.woff2") format("woff2");
+	font-weight: 500;
+	font-style: normal;
 }
 
 @font-face {
-    font-family: "Montserrat";
-    src: url('./assets/fonts/Montserrat-SemiBold.woff2') format("woff2");
-    font-weight: 600;
-    font-style: normal;
+	font-family: "Montserrat";
+	src: url('./assets/fonts/Montserrat-SemiBold.woff2') format("woff2");
+	font-weight: 600;
+	font-style: normal;
 }
 
 @font-face {
-    font-family: "Montserrat";
-    src: url("./assets/fonts/Montserrat-Bold.woff2") format("woff2");
-    font-weight: 700;
-    font-style: normal;
+	font-family: "Montserrat";
+	src: url("./assets/fonts/Montserrat-Bold.woff2") format("woff2");
+	font-weight: 700;
+	font-style: normal;
 }
 
 @font-face {
-    font-family: "Montserrat";
-    src: url("./assets/fonts/Montserrat-ExtraBold.woff2") format("woff2");
-    font-weight: 800;
-    font-style: normal;
+	font-family: "Montserrat";
+	src: url("./assets/fonts/Montserrat-ExtraBold.woff2") format("woff2");
+	font-weight: 800;
+	font-style: normal;
 }
 
 :root {
-    --font-family: Montserrat;
-    line-height: 1.5;
-    font-weight: 400;
-    width: 100%;
+	--font-family: Montserrat;
+	line-height: 1.5;
+	font-weight: 400;
+	width: 100%;
 
-    color-scheme: light dark;
-    color: rgba(255, 255, 255, 0.87);
-    background-color: #EEEEEE;
+	color-scheme: light dark;
+	color: rgba(255, 255, 255, 0.87);
 
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 
-    --blue-100: #2054F4;
-    --blue-200: #003CF6;
-    --black-100: #050505;
-    --black-normal: #001A31;
-    --black-active: #012443;
+	--blue-100: #2054F4;
+	--blue-200: #003CF6;
+	--black-100: #050505;
+	--black-normal: #001A31;
+	--black-active: #012443;
 
-    --main-white: #FFFFFF;
-    --body-bg: #EEEEEE;
-    --content-bg: #FAFBFC;
+	--main-white: #FFFFFF;
+	--body-bg: #EEEEEE;
+	--content-bg: #FAFBFC;
 
-    --disabled: #D9D9D9;
+	--disabled: #D9D9D9;
+	--yellow: #FFEE02;
+	--gray: #BCBFC6;
 
 
 }
 
 * {
-    font-family: var(--font-family), sans-serif;
+	font-family: var(--font-family), sans-serif;
 }
 
 main {
-    min-height: 100vh;
+	min-height: 100vh;
 }
 
 h1,
@@ -78,64 +79,67 @@ h4,
 p,
 ul,
 ol,
+a,
+svg,
 li {
-    font-family: var(--font-family), sans-serif;
-    margin: 0;
-    padding: 0;
+	font-family: var(--font-family), sans-serif;
+	margin: 0;
+	padding: 0;
 }
 
 li {
-    list-style: none;
+	list-style: none;
 }
 
 
 input {
-    padding: 0;
+	padding: 0;
 }
 
 body {
-    width: 100%;
-    margin: 0 auto;
-    min-width: 320px;
-    min-height: 100vh;
-    font-size: var(--font-family), sans-serif;
+	width: 100%;
+	margin: 0 auto;
+	min-width: 320px;
+	min-height: 100vh;
+	font-size: var(--font-family), sans-serif;
+	background-color: var(--body-bg);
 }
 
 section {
-    padding: 20px;
+	padding: 20px;
 }
 
 a {
-    font-family: var(--font-family), sans-serif;
-    text-decoration: none;
+	font-family: var(--font-family), sans-serif;
+	text-decoration: none;
 }
 
 button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    background: transparent;
-    border: none;
-    margin: 0;
-    padding: 0;
-    font-family: var(--font-family), sans-serif;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	background: transparent;
+	border: none;
+	margin: 0;
+	padding: 0;
+	font-family: var(--font-family), sans-serif;
 }
 
 img {
-    width: 100%;
+	width: 100%;
 }
 
 .is-hidden {
-    display: none;
+	display: none;
 }
 
 .visually-hidden {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    margin: -1px;
-    border: 0;
-    padding: 0;
-    white-space: nowrap;
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	border: 0;
+	padding: 0;
+	white-space: nowrap;
 }
