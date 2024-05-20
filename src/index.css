@@ -1,6 +1,6 @@
 @font-face {
     font-family: "Montserrat";
-    src: url('./assets/fonts/Montserrat-Regular.woff2') format("woff2");
+    src: url("./assets/fonts/Montserrat-Regular.woff2") format("woff2");
     font-weight: normal;
     font-style: normal;
 }
@@ -14,7 +14,7 @@
 
 @font-face {
     font-family: "Montserrat";
-    src: url('./assets/fonts/Montserrat-SemiBold.woff2') format("woff2");
+    src: url("./assets/fonts/Montserrat-SemiBold.woff2") format("woff2");
     font-weight: 600;
     font-style: normal;
 }
@@ -33,6 +33,12 @@
     font-style: normal;
 }
 
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
 :root {
     --font-family: Montserrat;
     line-height: 1.5;
@@ -41,26 +47,31 @@
 
     color-scheme: light dark;
     color: rgba(255, 255, 255, 0.87);
-    background-color: #EEEEEE;
+    background-color: #eeeeee;
 
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 
-    --blue-100: #2054F4;
-    --blue-200: #003CF6;
+    --blue-100: #2054f4;
+    --blue-200: #003cf6;
+    --white-gradient: linear-gradient(
+        90deg,
+        rgba(250, 251, 252, 0.08) 0%,
+        rgba(250, 251, 252, 0.2) 100%
+    );
     --black-100: #050505;
-    --black-normal: #001A31;
+    --black-normal: #001a31;
     --black-active: #012443;
-
-    --main-white: #FFFFFF;
-    --body-bg: #EEEEEE;
-    --content-bg: #FAFBFC;
-
-    --disabled: #D9D9D9;
-
-
+    --main-white: #ffffff;
+    --body-bg: #eeeeee;
+    --content-bg: #fafbfc;
+    --white-100: #fafbfc;
+    --yellow: #ffee02;
+    --disabled: #d9d9d9;
+    --green: #96E585;
+    --red: #FF624D;
 }
 
 * {
@@ -88,7 +99,6 @@ li {
     list-style: none;
 }
 
-
 input {
     padding: 0;
 }
@@ -99,6 +109,7 @@ body {
     min-width: 320px;
     min-height: 100vh;
     font-size: var(--font-family), sans-serif;
+    color: var(--black-100, #050505);
 }
 
 section {
@@ -123,7 +134,9 @@ button {
 }
 
 img {
-    width: 100%;
+    display: block;
+    max-width: 100%;
+    height: auto;
 }
 
 .is-hidden {
