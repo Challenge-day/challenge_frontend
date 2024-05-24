@@ -2,40 +2,57 @@ import styled from "styled-components";
 
 export const ContentSection = styled.section`
   width: 100%;
+  /* margin: 0 auto; */
   min-height: 100vh;
-  //padding: 20px 15px 15px;
-
   border-radius: 20px;
-  //outline: 1px solid tomato;
   background-color: var(--content-bg);
 `;
 
-export const BalanceContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  background-color: var(--blue-100);
-  width: 100%;
-  border-radius: 20px;
-  padding: 12px 20px 17px;
-  margin-inline: auto;
+export const SectionContainer = styled.div`
+  padding: 15px;
+  border-radius: 25px;
+  outline: 1px solid tomato;
+  background-color: var(--main-white);
 `;
 
-export const BalanceContent = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+export const MainContent = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-areas:
+    "amount-info"
+    "chart"
+    "actions";
+  row-gap: 20px;
+
+  background-color: var(--blue-100);
+  padding: 20px;
+
+  border-radius: 25px;
+`;
+
+export const AmountInfo = styled.div`
+  display: grid;
+  grid-area: amount-info;
+  grid-template-areas:
+    "title"
+    "balanceAmount"
+    "content";
+  row-gap: 10px;
 `;
 
 export const ContainerTitle = styled.h1`
+  grid-area: title;
   color: var(--main-white);
   font-size: 20px;
   font-weight: 500;
 `;
 
-export const ContainerContent = styled.div``;
+export const ContainerContent = styled.div`
+  grid-area: content;
+`;
 
 export const BalanceAmountWrapper = styled.div`
+  grid-area: balanceAmount;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -48,7 +65,43 @@ export const BalanceAmountWrapper = styled.div`
 export const BalanceAmount = styled.div``;
 
 export const SvgContainer = styled.div`
+  grid-area: chart;
   display: flex;
   justify-content: center;
   align-items: center;
+`;
+
+export const Actions = styled.div`
+  display: grid;
+  grid-area: actions;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-areas: "daily mining";
+  column-gap: 15px;
+  justify-items: center;
+`;
+
+export const Card = styled.div`
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 15px;
+  padding: 20px;
+  border-radius: 20px;
+  width: 100%;
+
+  color: var(--black-100);
+  text-align: center;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 130%;
+`;
+
+export const CardImage = styled.img`
+  max-width: 100%;
+`;
+
+export const CardTitle = styled.h2`
+  text-align: center;
+  font-size: 10px;
+  font-weight: 500;
+  line-height: 130%;
 `;

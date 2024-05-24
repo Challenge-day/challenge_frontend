@@ -1,26 +1,28 @@
 import * as Styled from "./MainPageModule.styled";
-import { Icon } from "../../../shared/Icon/Icon";
+import { actionsCardsData } from "../data/data";
 
-import waves from "../../../assets/line-flow.png";
+import TabsModule from "./Tabs/TabsModule";
 
 const MainPageModule = () => {
+
   return (
     <Styled.ContentSection>
-      <div>
-        <Styled.BalanceContent>
-          <Styled.BalanceContent>
-            <Styled.ContainerTitle>Your Balance</Styled.ContainerTitle>
-            <Styled.BalanceAmountWrapper>
-              <Icon width={25} height={30} iconId={"icon-e-max"} />
-              <Styled.BalanceAmount>1.7M</Styled.BalanceAmount>
-            </Styled.BalanceAmountWrapper>
-            <Styled.ContainerContent>You’ve got it 👍</Styled.ContainerContent>
-          </Styled.BalanceContent>
-          <Styled.SvgContainer>
-            <img src={waves} alt="waves" width={255} height={85} />
-          </Styled.SvgContainer>
-        </Styled.BalanceContent>
-      </div>
+      <Styled.SectionContainer>
+        <div style={{ display: "flex", gap: "20px" }}>
+          <div style={{ width: "50px" }}>
+            <img src={actionsCardsData[0].image} alt="w" height="50px" />
+          </div>
+          <div>
+            <p style={{ color: "black" }}>NAME</p>
+            <p style={{ color: "black" }}>10 days in Challenge</p>
+          </div>
+        </div>
+        <div>
+          <h1 style={{ color: "black" }}>Hello</h1>
+          <h4 style={{ color: "black" }}>Great to see you again! 🌅😊 </h4>
+        </div>
+        <TabsModule />
+      </Styled.SectionContainer>
     </Styled.ContentSection>
   );
 };

@@ -3,11 +3,13 @@ import { Outlet } from "react-router-dom";
 
 const Layout = () => {
   return (
-    <main>
-      <Suspense fallback={<div>Loading...</div>}>
-        <Outlet />
-      </Suspense>
-    </main>
+    <>
+      <main>
+        <Suspense fallback={<div>Loading...</div>}>
+          <Outlet />
+        </Suspense>
+      </main>
+    </>
   );
 };
 
