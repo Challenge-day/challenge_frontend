@@ -1,7 +1,15 @@
 import dailyTasksImage from "../images/daily_tasks.webp";
 import miningImage from "../images/mining.webp";
 
-export const actionsCardsData = [
+export interface ActionCard {
+  title: string;
+  image: string;
+  navigateTo: string;
+  bgColor: string;
+  gridArea: string;
+}
+
+export const actionsCardsData: ActionCard[] = [
   {
     title: "Daily tasks",
     image: dailyTasksImage,
