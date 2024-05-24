@@ -48,7 +48,7 @@ export const TaskItem = styled.li<{ status: string }>`
 export const WrapperText = styled.div`
     display: flex;
     width: 100%;
-    gap: 5px;
+    gap: 2px;
 `;
 
 export const TaskTitle = styled.p`
