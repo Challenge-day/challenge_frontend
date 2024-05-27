@@ -4,19 +4,15 @@ import { Icon } from "../../../../shared/Icon/Icon";
 export default function OfferItem({
     title,
     img,
-    handleClick,
     count,
-    copied
 }: {
     title: string;
     img?: string;
     count: string;
-    copied: boolean;
-    handleClick: () => void;
 }) {
     return (
         <Styled.OfferItem>
-            <Styled.Button disabled={copied} onClick={handleClick}>
+            <Styled.WrapperOffer >
                 <Styled.Image src={img} />
                 <Styled.WrapperText>
                     <Styled.OfferTitle>{title}</Styled.OfferTitle>
@@ -33,7 +29,7 @@ export default function OfferItem({
                         for you and your friend
                     </Styled.OfferDescription>
                 </Styled.WrapperText>
-            </Styled.Button>
+            </Styled.WrapperOffer>
         </Styled.OfferItem>
     );
 }
