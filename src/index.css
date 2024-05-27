@@ -41,6 +41,17 @@
 	font-style: normal;
 }
 
+@font-face {
+	font-family: "Prosto One";
+	src: url('./assets/fonts/ProstoOne-Regular.ttf') format("woff2");
+	font-weight: normal;
+	font-style: normal;
+	font-family: "Prosto One";
+	src: url("./assets/fonts/ProstoOne-Regular.ttf") format("woff2");
+	font-weight: normal;
+	font-style: normal;
+}
+
 *,
 *::before,
 *::after {
