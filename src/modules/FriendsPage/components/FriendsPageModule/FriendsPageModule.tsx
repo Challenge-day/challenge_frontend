@@ -8,11 +8,11 @@ import * as Styled from "./FriendsPageModule.styled";
 export default function FriendsPageModule() {
     const [copied, setCopied] = useState<boolean>(false);
     const handleClick = () => {
-        setCopied(prevState => !prevState);
+        setCopied((prevState) => !prevState);
         setTimeout(() => {
-            setCopied(prevState => !prevState);
-        }, 2000)
-      };
+            setCopied((prevState) => !prevState);
+        }, 2000);
+    };
     return (
         <Styled.Container>
             <Styled.HeadTitle>Invite Friends!</Styled.HeadTitle>
@@ -26,8 +26,6 @@ export default function FriendsPageModule() {
                         title={title}
                         img={img}
                         count={count}
-                        copied={copied}
-                        handleClick={handleClick}
                     />
                 ))}
             </Styled.OffersList>
@@ -42,6 +40,12 @@ export default function FriendsPageModule() {
                     />
                 ))}
             </Styled.FriendsList>
+            <Styled.CopyLink>
+                <Styled.CopyLinkText>Copy Invitive Link</Styled.CopyLinkText>
+                <Styled.CopyLinkButton onClick={handleClick} disabled={copied}>
+                    <Icon width={15} height={15} iconId={"icon-arrow-go"} />
+                </Styled.CopyLinkButton>
+            </Styled.CopyLink>
             {copied && (
                 <Styled.LinkCopiedWrapper>
                     <Styled.LinkCopiedText>
