@@ -26,39 +26,122 @@ export const Button = styled.button`
     line-height: normal;
 `;
 
-export const WrapperButtons = styled.div`
-    display: flex;
-    gap: 15px;
+const defaultAnimation = keyframes`
+  50% {
+    transform: scale(1);
+  }
+  0%, 20%, 80%, 100%{
+    transform: scale(1.5);
+  }
 `;
 
-export const ButtonInWrapper = styled.button`
-    width: 120px;
-    padding: 10px 15px;
-    border-radius: 100px;
-    border: 1px solid transparent; /* for layout purposes */
-    color: var(--white-100, #fafbfc);
-    text-align: center;
-    font-family: Montserrat;
-    font-size: 15px;
-    font-weight: 600;
-    line-height: 150%;
-    background: var(--blue-100, #2054f4);
-`;
-
-export const BorderForButton = styled.div<{ toLeft?: boolean }>`
-    background: ${({ toLeft }) =>
-        toLeft
-            ? `linear-gradient(to left, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.1) 100%)`
-            : `linear-gradient(to right, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.1) 100%)`};
-    padding: 1px;
-    border-radius: 50px;
-`;
-
-export const LoaderContainer = styled.div`
+export const LoaderWrapper = styled.div`
+    display: inline-block;
     position: relative;
-    width: 255px;
-    height: 255px;
-    margin-bottom: 40px;
+    width: 290px;
+    height: 290px;
+    margin-bottom: 60px;
+`;
+
+export const LoaderDot = styled.div`
+    position: absolute;
+    width: 20px; /* 6.4px * (290px / 80px) */
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    animation: ${defaultAnimation} 2s linear infinite;
+
+    &:nth-child(1) {
+        animation-delay: 0s;
+        top: 133.4px; /* 36.8px * (290px / 80px) */
+        left: 270.272px; /* 66.24px * (290px / 80px) */
+    }
+
+    &:nth-child(2) {
+        animation-delay: -0.1s;
+        top: 80.392px; /* 22.08px * (290px / 80px) */
+        left: 256.07479px; /* 62.29579px * (290px / 80px) */
+    }
+
+    &:nth-child(3) {
+        animation-delay: -0.2s;
+        top: 41.10421px; /* 11.30421px * (290px / 80px) */
+        left: 227.392px; /* 51.52px * (290px / 80px) */
+    }
+
+    &:nth-child(4) {
+        animation-delay: -0.4s;
+        top: 6.808px; /* 7.36px * (290px / 80px) */
+        left: 133.4px; /* 36.8px * (290px / 80px) */
+    }
+
+    &:nth-child(5) {
+        animation-delay: -0.6s;
+        top: 41.10421px; /* 11.30421px * (290px / 80px) */
+        left: 40.392px; /* 22.08px * (290px / 80px) */
+    }
+
+    &:nth-child(6) {
+        animation-delay: -0.7s;
+        top: 80.392px; /* 22.08px * (290px / 80px) */
+        left: 11.10421px; /* 11.30421px * (290px / 80px) */
+    }
+
+    &:nth-child(7) {
+        animation-delay: -0.8s;
+        top: 133.4px; /* 36.8px * (290px / 80px) */
+        left: -4.808px; /* 7.36px * (290px / 80px) */
+    }
+
+    &:nth-child(8) {
+        animation-delay: -0.9s;
+        top: 187.392px; /* 51.52px * (290px / 80px) */
+        left: 16.10421px; /* 11.30421px * (290px / 80px) */
+    }
+
+    &:nth-child(9) {
+        animation-delay: -1s;
+        top: 226.07479px; /* 62.29579px * (290px / 80px) */
+        left: 40.392px; /* 22.08px * (290px / 80px) */
+    }
+
+    &:nth-child(10) {
+        animation-delay: -1.2s;
+        top: 260.272px; /* 66.24px * (290px / 80px) */
+        left: 133.4px; /* 36.8px * (290px / 80px) */
+    }
+
+    &:nth-child(11) {
+        animation-delay: -1.4s;
+        top: 226.07479px; /* 62.29579px * (290px / 80px) */
+        left: 227.392px; /* 51.52px * (290px / 80px) */
+    }
+
+    &:nth-child(12) {
+        animation-delay: -1.5s;
+        top: 187.392px; /* 51.52px * (290px / 80px) */
+        left: 256.07479px; /* 62.29579px * (290px / 80px) */
+    }
+    &:nth-child(13) {
+        animation-delay: -0.3s;
+        top: 16.10421px;
+        left: 187.392px;
+    }
+    &:nth-child(14) {
+        animation-delay: -0.5s;
+        top: 16.10421px;
+        left: 80.392px;
+    }
+    &:nth-child(15) {
+        animation-delay: -1.1s;
+        top: 250.272px;
+        left: 80.392px;
+    }
+    &:nth-child(16) {
+        animation-delay: -1.3s;
+        top: 250.272px;
+        left: 187.392px;
+    }
 `;
 
 export const LoaderText = styled.div`
@@ -72,44 +155,24 @@ export const LoaderText = styled.div`
     text-align: center;
 `;
 
-const spin = keyframes`
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+export const InstructionSlogan = styled.span`
+    color: var(--white-100, #fafbfc);
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+    margin-bottom: 10px;
+    width: 100%;
 `;
 
-export const Loader = styled.div`
-    position: relative;
-    border-radius: 50%;
-    width: 270px;
-    height: 270px;
-    box-sizing: border-box;
-
-    &::before {
-        content: '';
-        left: -7px;
-        top: -10px;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="none" stroke-linecap="round" stroke="rgba(250, 251, 252, 0.20)" stroke-width="4" stroke-dasharray="20, 10, 15, 10, 20, 10, 40, 10, 20, 10" /></svg>');
-    }
-
-    &::after {
-        content: '';
-        left: -7px;
-        top: -10px;
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="none" stroke-linecap="round" stroke="white" stroke-width="4" stroke-dasharray="100" /></svg>');
-        animation: ${spin} 20s linear infinite;
-        clip-path: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="45" fill="white" /></svg>');
-    }
-    
+export const InstructionDescription = styled.p`
+    color: var(--white-100, #fafbfc);
+    text-align: center;
+    font-family: Montserrat;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 120%;
 `;

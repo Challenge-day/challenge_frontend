@@ -1,39 +1,45 @@
 import { Icon } from "../../../../shared/Icon/Icon";
 import {
-    BorderForButton,
     Button,
-    ButtonInWrapper,
     Container,
-    WrapperButtons,
-    Loader,
     LoaderText,
-    LoaderContainer,
+    LoaderWrapper,
+    LoaderDot,
+    InstructionSlogan,
+    InstructionDescription,
 } from "./MiningPageModule.styled";
 
 export default function MiningPageModule() {
     return (
         <Container>
-            <LoaderContainer>
-                <Loader />
+            <LoaderWrapper>
+                <LoaderDot />
+                <LoaderDot />
+                <LoaderDot />
+                <LoaderDot />
+                <LoaderDot />
+                <LoaderDot />
+                <LoaderDot />
+                <LoaderDot />
+                <LoaderDot />
+                <LoaderDot />
+                <LoaderDot />
+                <LoaderDot />
+                <LoaderDot />
+                <LoaderDot />
+                <LoaderDot />
+                <LoaderDot />
                 <LoaderText>
-                        <Icon
-                            width={209}
-                            height={209}
-                            iconId={"background-start"}
-                        />
-                    <Button>
-                        START
-                    </Button>
+                    <Icon
+                        width={209}
+                        height={209}
+                        iconId={"background-start"}
+                    />
+                    <Button>START</Button>
                 </LoaderText>
-            </LoaderContainer>
-            <WrapperButtons>
-                <BorderForButton>
-                    <ButtonInWrapper>Tasks</ButtonInWrapper>
-                </BorderForButton>
-                <BorderForButton toLeft={true}>
-                    <ButtonInWrapper>Friends</ButtonInWrapper>
-                </BorderForButton>
-            </WrapperButtons>
+            </LoaderWrapper>
+                <InstructionSlogan>Let's go!</InstructionSlogan>
+                <InstructionDescription>Click the “Start” and begin mining!</InstructionDescription>
         </Container>
     );
 }
