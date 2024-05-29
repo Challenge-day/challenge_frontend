@@ -1,4 +1,4 @@
-import styled, { keyframes } from "styled-components";
+import styled, { css, keyframes } from "styled-components";
 
 export const Container = styled.div`
     border-radius: 25px;
@@ -9,15 +9,31 @@ export const Container = styled.div`
     justify-content: center;
 `;
 
-export const Button = styled.button`
+export const Button = styled.button<{ status: string }>`
     padding: 48px 12px;
     border-radius: 100px;
-    background: var(--white-50, rgba(252, 252, 252, 0.4));
+    background-color: ${({ status }) => {
+        switch (status) {
+            case "Pending":
+            case "Started":
+                return `var(--white-100, #FAFBFC)`;
+            default:
+                return `var(--white-50, rgba(252, 252, 252, 0.4))`;
+        }
+    }};
     box-shadow: 0px 4px 4px 0px rgba(5, 5, 5, 0.25) inset;
     position: absolute;
     top: 20%;
     left: 20%;
-    color: var(--white-100, #fafbfc);
+    color: ${({ status }) => {
+        switch (status) {
+            case "Pending":
+            case "Started":
+                return `var(--blue-100, #2054F4);`;
+            default:
+                return `var(--white-50, rgba(252, 252, 252, 0.4))`;
+        }
+    }};
     text-align: center;
     font-family: "Prosto One";
     font-size: 28px;
@@ -27,12 +43,12 @@ export const Button = styled.button`
 `;
 
 const defaultAnimation = keyframes`
-  50% {
-    transform: scale(1);
-  }
-  0%, 20%, 80%, 100%{
-    transform: scale(1.5);
-  }
+    0%, 20%, 80%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.3);
+    }
 `;
 
 export const LoaderWrapper = styled.div`
@@ -43,14 +59,25 @@ export const LoaderWrapper = styled.div`
     margin-bottom: 60px;
 `;
 
-export const LoaderDot = styled.div`
+export const LoaderDot = styled.div<{ status: string }>`
     position: absolute;
     width: 20px; /* 6.4px * (290px / 80px) */
     height: 20px;
-    background: white;
+    background-color: ${({ status }) => {
+        switch (status) {
+            case "Pending":
+            case "Started":
+                return `var(--white-100, #FAFBFC)`;
+            default:
+                return `var(--White-20, rgba(250, 251, 252, 0.20))`;
+        }
+    }};
     border-radius: 50%;
-    animation: ${defaultAnimation} 2s linear infinite;
-
+    animation: ${({ status }) =>
+        status === "Started" &&
+        css`
+            ${defaultAnimation} 2s linear infinite
+        `};
     &:nth-child(1) {
         animation-delay: 0s;
         top: 133.4px; /* 36.8px * (290px / 80px) */
@@ -175,4 +202,79 @@ export const InstructionDescription = styled.p`
     font-style: normal;
     font-weight: 500;
     line-height: 120%;
+`;
+
+export const WrapperStarted = styled.div`
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 30%;
+`;
+
+export const StartedCount = styled.p`
+    color: var(--white-100, #fafbfc);
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+`;
+
+export const StartedProgress = styled.p`
+    color: var(--white-100, #fafbfc);
+    font-family: Montserrat;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 130%;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+`;
+
+export const StartedProgressCount = styled.span`
+    color: var(--white-100, #fafbfc);
+    font-family: Montserrat;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 130%;
+`;
+
+export const StartedHour = styled.p`
+    color: var(--white-100, #fafbfc);
+    font-family: Montserrat;
+    font-size: 6px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    justify-content: center;
+`;
+
+export const StartedHourCount = styled.span`
+    color: var(--white-100, #fafbfc);
+    font-family: Montserrat;
+    font-size: 6px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+`;
+
+export const StartedTotalText = styled.p`
+    color: var(--white-100, #fafbfc);
+    font-family: Montserrat;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
 `;
