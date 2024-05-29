@@ -6,6 +6,8 @@ import { useState } from "react";
 import { BoxTabsSx, TabListSx } from "./TabsModule.styled";
 import { actionTabs, tabs } from "../../data/dataTabs/data";
 import MainContentModule from "../MainContentModule/MainContentModule";
+import FriendsPageModule from "../../../FriendsPage/components/FriendsPageModule/FriendsPageModule";
+import TasksPageModule from "../../../TasksPage/components/TasksPageModule/TasksPageModule";
 
 const TabsModule = () => {
   const [value, setValue] = useState<string>("1");
@@ -42,10 +44,10 @@ const TabsModule = () => {
           <p style={{ color: "black" }}>tabs2</p>
         </TabPanel>
         <TabPanel value="3" sx={{ padding: "0" }}>
-          <p style={{ color: "black" }}>tabs3</p>
+          <TasksPageModule />
         </TabPanel>
         <TabPanel value="4" sx={{ padding: "0" }}>
-          <p style={{ color: "black" }}>tabs4</p>
+          <FriendsPageModule />
         </TabPanel>
       </TabContext>
     </>

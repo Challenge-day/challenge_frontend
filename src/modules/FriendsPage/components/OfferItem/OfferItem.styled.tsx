@@ -15,7 +15,7 @@ export const OfferItem = styled.li`
     width: 100%;
 `;
 
-export const Button = styled.button`
+export const WrapperOffer = styled.button`
     display: flex;
     gap: 10px;
     text-align: left;

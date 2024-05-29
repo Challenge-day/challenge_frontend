@@ -1,17 +1,19 @@
 import styled from "styled-components";
 
 export const ContentSection = styled.section`
+
   width: 100%;
   /* margin: 0 auto; */
   min-height: 100vh;
   border-radius: 20px;
-  background-color: var(--content-bg);
+  /* background-color: var(--white-gradient); */
 `;
 
 export const SectionContainer = styled.div`
+box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   padding: 15px;
   border-radius: 25px;
-  outline: 1px solid tomato;
+
   background-color: var(--main-white);
 `;
 
@@ -42,13 +44,14 @@ export const AmountInfo = styled.div`
 
 export const ContainerTitle = styled.h1`
   grid-area: title;
-  color: var(--main-white);
+  color: var(--white-100);
   font-size: 20px;
   font-weight: 500;
 `;
 
 export const ContainerContent = styled.div`
   grid-area: content;
+  color:var(--white-100);
 `;
 
 export const BalanceAmountWrapper = styled.div`
@@ -62,13 +65,15 @@ export const BalanceAmountWrapper = styled.div`
   line-height: 100%;
 `;
 
-export const BalanceAmount = styled.div``;
+export const BalanceAmount = styled.div`
+color: var(--white-100);
+`;
 
-export const SvgContainer = styled.div`
+export const Container = styled.div`
   grid-area: chart;
   display: flex;
   justify-content: center;
-  align-items: center;
+ 
 `;
 
 export const Actions = styled.div`

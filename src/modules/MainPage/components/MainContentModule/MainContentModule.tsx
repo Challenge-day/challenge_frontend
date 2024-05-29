@@ -3,6 +3,7 @@ import { Icon } from "../../../../shared/Icon/Icon";
 import { ActionCard, actionsCardsData } from "../../data/data";
 import waves from "../../../../assets/line-flow.png";
 import { Link } from "react-router-dom";
+import LineChart from "../ChartComponent/ChartComponent";
 
 
 const MainContentModule = () => {
@@ -18,9 +19,11 @@ const MainContentModule = () => {
         <Styled.ContainerContent>You’ve got it 👍</Styled.ContainerContent>
       </Styled.AmountInfo>
 
-      <Styled.SvgContainer>
-        <img src={waves} alt="waves" width={255} height={85} />
-      </Styled.SvgContainer>
+
+
+      <Styled.Container>
+        <LineChart />
+      </Styled.Container>
       <Styled.Actions>
         {actionsCardsData.map((action: ActionCard, index) => (
           <Link key={index} to={action.navigateTo}>

@@ -51,6 +51,7 @@ export const FriendsList = styled.ul`
     gap: 5px;
     border-radius: 25px;
     padding: 10px;
+    margin-bottom: 20px;
     border: 1px solid var(--white-gradient, rgba(250, 251, 252, 0.4));
     background: var(
         --white-gradient,
@@ -81,4 +82,30 @@ export const LinkCopiedText = styled.p`
     font-weight: 400;
     line-height: 150%;
     width: fit-content;
+`;
+
+export const CopyLink = styled.div`
+    padding: 5px 20px;
+    border-radius: 100px;
+    background: var(--Yellow, #ffee02);
+    display: flex;
+    align-items: center;
+`;
+
+export const CopyLinkText = styled.p`
+    color: var(--black-100, #050505);
+    font-family: Montserrat;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 150%;
+    margin-right: auto;
+`;
+
+export const CopyLinkButton = styled.button`
+    border-radius: 100px;
+    background: var(--black-100, #050505);
+    width: 40px;
+    height: 40px;
+    padding: 4px;
 `;
