@@ -2,8 +2,8 @@ import sprite from "../svg/sprite.svg";
 
 interface IIconProps {
   styles?: React.CSSProperties;
-  width: number;
-  height: number;
+  width?: number;
+  height?: number;
   iconId: string;
 }
 

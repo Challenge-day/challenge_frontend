@@ -3,7 +3,10 @@
 	src: url('./assets/fonts/Montserrat-Regular.woff2') format("woff2");
 	font-weight: normal;
 	font-style: normal;
-
+	font-family: "Montserrat";
+	src: url("./assets/fonts/Montserrat-Regular.woff2") format("woff2");
+	font-weight: normal;
+	font-style: normal;
 }
 
 @font-face {
@@ -18,7 +21,10 @@
 	src: url('./assets/fonts/Montserrat-SemiBold.woff2') format("woff2");
 	font-weight: 600;
 	font-style: normal;
-
+	font-family: "Montserrat";
+	src: url("./assets/fonts/Montserrat-SemiBold.woff2") format("woff2");
+	font-weight: 600;
+	font-style: normal;
 }
 
 @font-face {
@@ -32,6 +38,17 @@
 	font-family: "Montserrat";
 	src: url("./assets/fonts/Montserrat-ExtraBold.woff2") format("woff2");
 	font-weight: 800;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Prosto One";
+	src: url('./assets/fonts/ProstoOne-Regular.ttf') format("woff2");
+	font-weight: normal;
+	font-style: normal;
+	font-family: "Prosto One";
+	src: url("./assets/fonts/ProstoOne-Regular.ttf") format("woff2");
+	font-weight: normal;
 	font-style: normal;
 }
 
