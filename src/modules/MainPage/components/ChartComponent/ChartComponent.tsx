@@ -11,7 +11,7 @@ export default function LineChart() {
       series={[
         {
           type: 'line',
-          data: [2, 30, 54, 20, 65, 5, 64, 30, 95, 25, 89, 1],
+          data: [2, 30, 54, 20, 65, 5, 64, 30, 95, 25, 89, 100],
         },
       ]}
       xAxis={[{ data: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12] }]}
