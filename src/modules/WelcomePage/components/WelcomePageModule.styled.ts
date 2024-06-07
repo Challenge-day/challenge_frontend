@@ -13,12 +13,14 @@ export const Title = styled.h1`
   font-weight: 500;
   line-height: 100%;
   text-transform: uppercase;
+  color: var(--white-100);
 `;
 
 export const Description = styled.div`
   font-size: 14px;
   font-weight: 400;
   line-height: 150%;
+  color: var(--white-100);
 `;
 
 export const DecorationBlock = styled.div`
@@ -27,10 +29,10 @@ export const DecorationBlock = styled.div`
   gap: 10px;
 `;
 
-export const Chal = styled.img`
+export const Challange = styled.img`
   position: absolute;
-  bottom: 45%;
-  left: -10%;
+  bottom: 18%;
+  left: 0%;
 `;
 export const Lange = styled.img`
   position: absolute;

@@ -1,8 +1,7 @@
 import * as Styled from "./WelcomePageModule.styled";
 import { Icon } from "../../../shared/Icon/Icon";
 
-import chal from "../images/chal.png";
-import lange from "../images/lange.png";
+import challange from '../images/Challenget.webp'
 
 const WelcomePageModule = () => {
   return (
@@ -11,9 +10,7 @@ const WelcomePageModule = () => {
         <Styled.MainContent>
           <Styled.Title>THE FUTURE</Styled.Title>
           <Styled.Description>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim
-            blandit volutpat maecenas volutpat blandit.
+            Combining the features of SocialFi and DeFi and rewarding users for completing real-life challenges
           </Styled.Description>
           <Styled.DecorationBlock></Styled.DecorationBlock>
         </Styled.MainContent>
@@ -26,8 +23,7 @@ const WelcomePageModule = () => {
           <Icon width={65} height={30} iconId={"icon-footer-arrow"} />
         </Styled.NaviLink>
       </Styled.FooterNav>
-      <Styled.Chal src={chal} alt="challange" />
-      <Styled.Lange src={lange} alt="challange" />
+      <Styled.Challange src={challange} alt="challange" />
     </>
   );
 };

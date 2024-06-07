@@ -5,15 +5,17 @@ export const TabListSx = {
   "& .MuiTabs-indicator": { display: "none" },
   "& .MuiTab-root": {
     textTransform: 'none',
+    color: "var(--Gray-400)",
+    fontSize: "12px",
+    lineHeight: "150%",
+    fontWeight: "500",
+    borderRadius: "16px",
+    fontFamily: "Montserrat",
+    minHeight: "18px",
+
     '&::first-letter': {
       textTransform: 'capitalize',
     },
-    color: "var(--black-100)",
-    fontSize: "14px",
-    lineHeight: "150%",
-
-    fontWeight: "500",
-    borderRadius: "16px",
   },
   "& .MuiTab-root:hover": {
     backgroundColor: "var(--blue-200)",
@@ -27,15 +29,14 @@ export const TabListSx = {
 
 export const BoxTabsSx = {
   display: "flex",
-  justifyContent: "space-between",
   padding: "20px 0",
+
 }
 
 export const TabMainSx = {
-  padding: "5px 10px",
+  padding: "5px 14px",
   minWidth: "30px",
-  minHeight: "18px",
-  color: "var(--black-100)",
+  color: "var(--Gray-400)",
   "&.Mui-selected": {
     backgroundColor: "var(--blue-200)",
     color: "var(--content-bg)",
@@ -44,8 +45,7 @@ export const TabMainSx = {
 export const TabMainingSx = {
   padding: "5px 15px",
   minWidth: "72px",
-  minHeight: "18px",
-  color: "var(--black-100)",
+  color: "var(--Gray-400)",
   "&.Mui-selected": {
     backgroundColor: "var(--blue-200)",
     color: "var(--content-bg)",
@@ -55,18 +55,16 @@ export const TabMainingSx = {
 export const TabTasksSx = {
   padding: "5px 15px",
   minWidth: "34px",
-  minHeight: "18px",
-  color: "var(--black-100)",
+  color: "var(--Gray-400)",
   "&.Mui-selected": {
     backgroundColor: "var(--blue-200)",
     color: "var(--content-bg)",
   },
 }
 export const TabFriendsSx = {
-  padding: "5px 15px",
+  padding: "5px 14px",
   minWidth: "46px",
-  minHeight: "18px",
-  color: "var(--black-100)",
+  color: "var(--Gray-400)",
   "&.Mui-selected": {
     backgroundColor: "var(--blue-200)",
     color: "var(--content-bg)",
