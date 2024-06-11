@@ -1,4 +1,4 @@
-import * as Styled from "./components/OfferItem/OfferItem.styled";
+import * as Styled from "./components/OfferItem/offer-item.styled";
 import { Icon } from "../../../shared/Icon/Icon";
 
 export default function OfferItem({

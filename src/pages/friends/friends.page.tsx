@@ -1,4 +1,4 @@
-import FriendsPageModule from "./modules/friendsPage.module";
+import FriendsPageModule from "./modules/friends-page.module";
 
 export default function FriendsPage() {
     return <FriendsPageModule />;

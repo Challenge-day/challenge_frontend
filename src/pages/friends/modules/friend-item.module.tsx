@@ -1,5 +1,5 @@
 import { Icon } from "../../../shared/Icon/Icon";
-import * as Styled from "./components/FriendItem/FriendItem.styled";
+import * as Styled from "./components/FriendItem/friend-item.styled";
 
 export default function FriendItem({
     name,

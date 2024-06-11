@@ -1,4 +1,4 @@
-import MainPageModule from "./modules/mainPage.module";
+import MainPageModule from "./modules/main-page.module";
 
 const MainPage = () => {
     return (

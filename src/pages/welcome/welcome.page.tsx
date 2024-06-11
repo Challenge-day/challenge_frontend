@@ -1,4 +1,4 @@
-import WelcomePageModule from "./modules/welcomePage.module";
+import WelcomePageModule from "./modules/welcome-page.module";
 
 const WelcomePage = () => {
   return (

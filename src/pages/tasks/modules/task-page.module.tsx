@@ -1,6 +1,6 @@
-import * as Styled from "./components/TasksPageModule/TasksPageModule.styled";
+import * as Styled from "./components/TasksPageModule/tasks-page-module.styled";
 import { tasksList } from "./data/data";
-import TaskItem from "./taskItem.module";
+import TaskItem from "./task-item.module";
 
 export default function TasksPageModule() {
     return (

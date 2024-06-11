@@ -15,7 +15,7 @@ import {
     StartedHour,
     StartedHourCount,
     StartedTotalText,
-} from "./components/MiningPageModule/MiningPageModule.styled";
+} from "./components/MiningPageModule/mining-page-module.styled";
 
 export default function MiningPageModule() {
     const [status, setStatus] = useState<"Wait" | "Pending" | "Started">(

@@ -3,11 +3,11 @@ import TabList from "@mui/lab/TabList";
 import TabPanel from "@mui/lab/TabPanel";
 import { Box, Tab } from "@mui/material";
 import { useState } from "react";
-import FriendsPageModule from "../../friends/modules/friendsPage.module";
-import { BoxTabsSx, TabListSx } from "./components/Tabs/TabsModule.styled";
+import FriendsPageModule from "../../friends/modules/friends-page.module";
+import { BoxTabsSx, TabListSx } from "./components/Tabs/tabs-module.styled";
 import { actionTabs, tabs } from "./data/dataTabs/data";
-import MainContentModule from "./mainContent.module";
-import TasksPageModule from "../../tasks/modules/taskPage.module";
+import MainContentModule from "./main-content.module";
+import TasksPageModule from "../../tasks/modules/task-page.module";
 
 const TabsModule = () => {
     const [value, setValue] = useState<string>("1");

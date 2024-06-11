@@ -1,7 +1,6 @@
-import * as Styled from "./components/MainPageModule.styled";
+import * as Styled from "./components/main-page-module.styled";
 import { actionsCardsData } from "./data/data";
 import TabsModule from "./tabs.module";
-
 
 const MainPageModule = () => {
     return (

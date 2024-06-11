@@ -1,5 +1,5 @@
 import { Icon } from "../../../shared/Icon/Icon";
-import * as Styled from "./components/TaskItem/TaskItem.styled";
+import * as Styled from "./components/TaskItem/task-item.styled";
 
 interface TaskItemProps {
     title: string;

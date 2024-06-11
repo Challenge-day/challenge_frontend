@@ -1,9 +1,9 @@
-import * as Styled from "./components/MainPageModule.styled";
+import * as Styled from "./components/main-page-module.styled";
 import { Icon } from "../../../shared/Icon/Icon";
 import { ActionCard, actionsCardsData } from "./data/data";
 import waves from "../../../../assets/line-flow.png";
 import { Link } from "react-router-dom";
-import LineChart from "./chartComponent.module";
+import LineChart from "./chart-component.module";
 
 const MainContentModule = () => {
     return (

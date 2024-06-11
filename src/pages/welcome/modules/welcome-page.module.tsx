@@ -1,4 +1,4 @@
-import * as Styled from "./components/WelcomePageModule.styled";
+import * as Styled from "./components/welcome-page-module.styled";
 import { Icon } from "../../../shared/Icon/Icon";
 
 import chal from "./images/chal.png";

@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { friendsList, offersList } from "./data/data";
-import OfferItem from "./offerItem.module";
-import * as Styled from "./components/FriendsPageModule/FriendsPageModule.styled";
-import FriendItem from "./friendItem.module";
+import OfferItem from "./offer-item.module";
+import * as Styled from "./components/FriendsPageModule/friends-page-module.styled";
+import FriendItem from "./friend-item.module";
 import { Icon } from "../../../shared/Icon/Icon";
 
 export default function FriendsPageModule() {
