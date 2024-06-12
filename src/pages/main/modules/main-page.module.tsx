@@ -2,8 +2,9 @@ import { Avatar, BlockCard } from "@challenge.day/uikit";
 import * as Styled from "./components/main-page-module.styled";
 import { actionsCardsData } from "./data/data";
 import TabsModule from "./tabs.module";
+import { ReactNode } from "react";
 
-const MainPageModule = () => {
+const MainPageModule = ({ children }: {children: ReactNode}) => {
     return (
         <Styled.ContentSection>
             <BlockCard>
@@ -28,6 +29,7 @@ const MainPageModule = () => {
                     </h4>
                 </div>
                 <TabsModule />
+                {children}
             </BlockCard>
         </Styled.ContentSection>
     );
