@@ -1,5 +1,10 @@
+import MainPageModule from "../main/modules/main-page.module";
 import FriendsPageModule from "./modules/friends-page.module";
 
 export default function FriendsPage() {
-    return <FriendsPageModule />;
+    return (
+        <MainPageModule>
+            <FriendsPageModule />;
+        </MainPageModule>
+    );
 }
