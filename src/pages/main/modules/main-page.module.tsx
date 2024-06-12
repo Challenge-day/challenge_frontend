@@ -1,3 +1,4 @@
+import { Avatar, BlockCard } from "@challenge.day/uikit";
 import * as Styled from "./components/main-page-module.styled";
 import { actionsCardsData } from "./data/data";
 import TabsModule from "./tabs.module";
@@ -5,13 +6,14 @@ import TabsModule from "./tabs.module";
 const MainPageModule = () => {
     return (
         <Styled.ContentSection>
-            <Styled.SectionContainer>
+            <BlockCard>
                 <div style={{ display: "flex", gap: "20px" }}>
                     <div style={{ width: "50px" }}>
-                        <img
+                        <Avatar
                             src={actionsCardsData[0].image}
                             alt="w"
-                            height="50px"
+                            isFullyRounded 
+                            size="min"
                         />
                     </div>
                     <div>
@@ -26,7 +28,7 @@ const MainPageModule = () => {
                     </h4>
                 </div>
                 <TabsModule />
-            </Styled.SectionContainer>
+            </BlockCard>
         </Styled.ContentSection>
     );
 };

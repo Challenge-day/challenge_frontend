@@ -25,16 +25,17 @@ export const TaskItem = styled.li<{ status: string }>`
         background: var(--black-100, #050505);
         align-items: center;
         margin-bottom: 5px;
-
+        & > p {
+            color: var(--white-100, #fafbfc);
+                        & > svg {
+                fill: white;
+            }
+        }
         & > div > p,
         span {
             color: var(--white-100, #fafbfc);
             font-size: 20px;
             line-height: 120%;
-
-            & > svg {
-                fill: white;
-            }
         }
 
         & > div > button {
@@ -73,6 +74,9 @@ export const TaskCount = styled.p`
     align-items: center;
     gap: 5px;
     white-space: nowrap;
+    & > svg {
+        fill: var(--black-100, #050505);
+    }
 `;
 
 export const TaskStatus = styled.p`
@@ -85,6 +89,9 @@ export const TaskStatus = styled.p`
     display: flex;
     gap: 5px;
     align-items: center;
+    & > svg {
+        fill: var(--black-100, #050505);
+    }
 `;
 
 export const TaskButton = styled.button`

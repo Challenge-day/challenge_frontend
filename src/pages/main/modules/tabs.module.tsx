@@ -8,6 +8,7 @@ import { BoxTabsSx, TabListSx } from "./components/Tabs/tabs-module.styled";
 import { actionTabs, tabs } from "./data/dataTabs/data";
 import MainContentModule from "./main-content.module";
 import TasksPageModule from "../../tasks/modules/task-page.module";
+import MiningPageModule from "../../mining/modules/mining-page.module";
 
 const TabsModule = () => {
     const [value, setValue] = useState<string>("1");
@@ -39,7 +40,7 @@ const TabsModule = () => {
                     <MainContentModule />
                 </TabPanel>
                 <TabPanel value="2" sx={{ padding: "0" }}>
-                    <p style={{ color: "black" }}>tabs2</p>
+                    <MiningPageModule />
                 </TabPanel>
                 <TabPanel value="3" sx={{ padding: "0" }}>
                     <TasksPageModule />
