@@ -81,7 +81,7 @@ const MainAppView = () => {
                     <div
                         style={{
                             width: "100%",
-                            padding: "12px",
+                            padding: "8px",
                             textAlign: "center",
                         }}
                     >
