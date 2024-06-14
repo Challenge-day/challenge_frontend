@@ -1,6 +1,7 @@
 import { Tab, Tabs } from "@challenge.day/uikit";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+// import MainContentModule from "./main-content.module";
 
 const TabsModule = () => {
     const [activeTabIndex, setActiveTabIndex] = useState(0);

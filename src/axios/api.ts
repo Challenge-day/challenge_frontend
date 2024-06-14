@@ -1,9 +1,8 @@
 import axios from "axios";
-import * as Iinterface from "./interface"
+import * as Iinterface from "./interface";
 const BASE_URL = "";
 
 const $instance = axios.create({ baseURL: BASE_URL });
-
 
 // export const setToken = (token) => {
 //     $instance.defaults.headers.common.Authorization = `Bearer ${token}`;
@@ -38,7 +37,6 @@ const $instance = axios.create({ baseURL: BASE_URL });
 //     return data;
 // };
 
-
 // export const forgotPassword = async ({ endPoint, postParams }) => {
 //     const { data } = await $instance.post(endPoint, postParams, {
 //         headers: {
@@ -68,10 +66,12 @@ const $instance = axios.create({ baseURL: BASE_URL });
 //     return data;
 // };
 
-
 // ====================== info_query
 
-export const getData = async ({ endPoint, getParams }: Iinterface.IGetDataParams): Promise<Iinterface.IDataResponse> => {
+export const getData = async ({
+    endPoint,
+    getParams,
+}: Iinterface.IGetDataParams): Promise<Iinterface.IDataResponse> => {
     const { data } = await $instance.get(endPoint, {
         params: {
             ...getParams,
@@ -111,4 +111,3 @@ export const getData = async ({ endPoint, getParams }: Iinterface.IGetDataParams
 //     });
 //     return data;
 // };
-

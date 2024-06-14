@@ -1,12 +1,11 @@
 import styled, { css, keyframes } from "styled-components";
 
 export const Container = styled.div`
-    border-radius: 25px;
-    background: var(--blue-100, #2054f4);
-    padding: 20px;
+    background: transparent;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
 `;
 
 export const Button = styled.button<{ status: string }>`
@@ -57,12 +56,13 @@ export const LoaderWrapper = styled.div`
     width: 290px;
     height: 290px;
     margin-bottom: 60px;
+    text-align: center;
 `;
 
 export const LoaderDot = styled.div<{ status: string }>`
     position: absolute;
-    width: 20px; /* 6.4px * (290px / 80px) */
-    height: 20px;
+    width: 16px; /* 6.4px * (290px / 80px) */
+    height: 16px;
     background-color: ${({ status }) => {
         switch (status) {
             case "Pending":

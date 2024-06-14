@@ -41,7 +41,7 @@ export default function FriendsPageModule() {
                 ))}
             </Styled.FriendsList>
             <Styled.CopyLink>
-                <Styled.CopyLinkText>Copy Invitive Link</Styled.CopyLinkText>
+                <Styled.CopyLinkText>Copy Invite Link</Styled.CopyLinkText>
                 <Styled.CopyLinkButton onClick={handleClick} disabled={copied}>
                     <Icon width={15} height={15} iconId={"icon-arrow-go"} />
                 </Styled.CopyLinkButton>

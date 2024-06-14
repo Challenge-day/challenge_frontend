@@ -27,7 +27,7 @@ export const TaskItem = styled.li<{ status: string }>`
         margin-bottom: 5px;
         & > p {
             color: var(--white-100, #fafbfc);
-                        & > svg {
+            & > svg {
                 fill: white;
             }
         }
