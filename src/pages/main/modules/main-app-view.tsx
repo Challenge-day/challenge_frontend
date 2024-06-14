@@ -78,7 +78,13 @@ const MainAppView = () => {
                     </Tab>
                 </Tabs>
                 <BlueCard>
-                    <div style={{ width: "100%", padding: "12px" }}>
+                    <div
+                        style={{
+                            width: "100%",
+                            padding: "12px",
+                            textAlign: "center",
+                        }}
+                    >
                         {activeTabIndex === 0 && <MainContentModule />}
                         {activeTabIndex === 1 && <MiningPage />}
                         {activeTabIndex === 2 && <TasksPage />}
