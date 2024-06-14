@@ -64,10 +64,12 @@ export default function MiningPageModule() {
                                 1 785 3126.00
                             </StartedCount>
                             <StartedProgress>
-                                Personal progress <StartedProgressCount>85%</StartedProgressCount>
+                                Personal progress{" "}
+                                <StartedProgressCount>85%</StartedProgressCount>
                             </StartedProgress>
                             <StartedHour>
-                                CHLs / hour<StartedHourCount>0.01000</StartedHourCount>
+                                CHLs / hour
+                                <StartedHourCount>0.01000</StartedHourCount>
                             </StartedHour>
                             <StartedTotalText>Total amount</StartedTotalText>
                         </WrapperStarted>
