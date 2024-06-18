@@ -9,7 +9,8 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "prepare": "husky",
-    "lint-staged": "lint-staged"
+    "lint-staged": "lint-staged",
+    "format": "prettier --write **/**/*.{js,ts,tsx,html}"
   },
   "lint-staged": {
     "**/*": "prettier --write --ignore-unknown"
@@ -23,6 +24,9 @@
     "@mui/styled-engine-sc": "^6.0.0-alpha.18",
     "@mui/x-charts": "^7.5.1",
     "@reduxjs/toolkit": "^2.2.3",
+    "@tma.js/react-router-integration": "^4.0.2",
+    "@tma.js/sdk": "^2.5.1",
+    "@tma.js/sdk-react": "^2.2.5",
     "@types/react-redux": "^7.1.33",
     "axios": "^1.6.8",
     "modern-normalize": "^2.0.0",
@@ -40,6 +44,7 @@
     "@typescript-eslint/eslint-plugin": "^7.2.0",
     "@typescript-eslint/parser": "^7.2.0",
     "@vitejs/plugin-react": "^4.2.1",
+    "eruda": "^3.0.1",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-react-hooks": "^4.6.0",

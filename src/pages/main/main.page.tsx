@@ -1,11 +1,11 @@
 import MainAppView from "./modules/main-app-view";
 
 const MainPage = () => {
-    return (
-        <>
-            <MainAppView />
-        </>
-    );
+  return (
+    <>
+      <MainAppView />
+    </>
+  );
 };
 
 export default MainPage;

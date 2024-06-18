@@ -1,12 +1,11 @@
 export const TabListSx = {
-
   minHeight: "20px",
 
   "& .MuiTabs-indicator": { display: "none" },
   "& .MuiTab-root": {
-    textTransform: 'none',
-    '&::first-letter': {
-      textTransform: 'capitalize',
+    textTransform: "none",
+    "&::first-letter": {
+      textTransform: "capitalize",
     },
     color: "var(--black-100)",
     fontSize: "14px",
@@ -22,14 +21,13 @@ export const TabListSx = {
   "& .MuiTouchRipple-root": {
     color: "var(--blue-200)",
   },
-
-}
+};
 
 export const BoxTabsSx = {
   display: "flex",
   justifyContent: "space-between",
   padding: "20px 0",
-}
+};
 
 export const TabMainSx = {
   padding: "5px 10px",
@@ -40,7 +38,7 @@ export const TabMainSx = {
     backgroundColor: "var(--blue-200)",
     color: "var(--content-bg)",
   },
-}
+};
 export const TabMainingSx = {
   padding: "5px 15px",
   minWidth: "72px",
@@ -50,7 +48,7 @@ export const TabMainingSx = {
     backgroundColor: "var(--blue-200)",
     color: "var(--content-bg)",
   },
-}
+};
 
 export const TabTasksSx = {
   padding: "5px 15px",
@@ -61,7 +59,7 @@ export const TabTasksSx = {
     backgroundColor: "var(--blue-200)",
     color: "var(--content-bg)",
   },
-}
+};
 export const TabFriendsSx = {
   padding: "5px 15px",
   minWidth: "46px",
@@ -71,4 +69,4 @@ export const TabFriendsSx = {
     backgroundColor: "var(--blue-200)",
     color: "var(--content-bg)",
   },
-}
+};

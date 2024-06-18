@@ -69,15 +69,15 @@ const $instance = axios.create({ baseURL: BASE_URL });
 // ====================== info_query
 
 export const getData = async ({
-    endPoint,
-    getParams,
+  endPoint,
+  getParams,
 }: Iinterface.IGetDataParams): Promise<Iinterface.IDataResponse> => {
-    const { data } = await $instance.get(endPoint, {
-        params: {
-            ...getParams,
-        },
-    });
-    return data;
+  const { data } = await $instance.get(endPoint, {
+    params: {
+      ...getParams,
+    },
+  });
+  return data;
 };
 //
 //
