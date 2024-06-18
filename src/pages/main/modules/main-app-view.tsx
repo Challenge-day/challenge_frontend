@@ -6,9 +6,11 @@ import MainContentModule from "./main-content.module";
 import TasksPage from "../../tasks/tasks.page";
 import FriendsPage from "../../friends/friends.page";
 import MiningPage from "../../mining/mining.page";
+import { useTelegram } from "../../../shared/hooks/useTelegram";
 
 const MainAppView = () => {
     const [activeTabIndex, setActiveTabIndex] = useState(0);
+    const {user} = useTelegram()
     return (
         <Styled.ContentSection>
             <BlockCard>
@@ -22,7 +24,7 @@ const MainAppView = () => {
                         />
                     </div>
                     <div>
-                        <p style={{ color: "black" }}>NAME</p>
+                        <p style={{ color: "black" }}>{user?.username ?? 'Name'}</p>
                         <p style={{ color: "black" }}>10 days in Challenge</p>
                     </div>
                 </div>
