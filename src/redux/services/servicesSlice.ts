@@ -32,11 +32,6 @@ const serviceSlice = createSlice({
 
 export const { setModalStatus, setModalContent } = serviceSlice.actions;
 
-export const {
-  selectError,
-  selectIsLoading,
-  selectOpenModal,
-  selectModalContent,
-} = serviceSlice.selectors;
+export const { selectError, selectIsLoading, selectOpenModal, selectModalContent } = serviceSlice.selectors;
 
 export const serviceReducer = serviceSlice.reducer;

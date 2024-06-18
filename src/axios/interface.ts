@@ -1,8 +1,8 @@
 export interface IGetDataParams {
-    endPoint: string;
-    getParams?: any;
+  endPoint: string;
+  getParams?: any;
 }
 
 export interface IDataResponse {
-    data: any;
+  data: any;
 }
