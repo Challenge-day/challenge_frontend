@@ -9,14 +9,19 @@ export const MainWrapper = styled.section`
 export const MainContent = styled.div``;
 
 export const Title = styled.h1`
+  color: var(--white-100);
   font-size: 60px;
+  font-style: normal;
   font-weight: 500;
-  line-height: 100%;
+  line-height: 100%; /* 60px */
   text-transform: uppercase;
+  padding-bottom: 20px;
 `;
 
 export const Description = styled.div`
+  color: var(--white-100);
   font-size: 14px;
+  font-style: normal;
   font-weight: 400;
   line-height: 150%;
 `;
@@ -24,18 +29,12 @@ export const Description = styled.div`
 export const DecorationBlock = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 10px;
 `;
 
-export const Chal = styled.img`
+export const Challange = styled.img`
   position: absolute;
-  bottom: 45%;
-  left: -10%;
-`;
-export const Lange = styled.img`
-  position: absolute;
-  bottom: 25%;
-  left: -7%;
+  bottom: 15%;
+  width: 100%;
 `;
 
 export const FooterNav = styled.footer`
