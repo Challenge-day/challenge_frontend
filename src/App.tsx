@@ -7,6 +7,8 @@ import { useEffect, useMemo } from "react";
 import { initNavigator } from "@tma.js/sdk-react";
 import { useIntegration } from "@tma.js/react-router-integration";
 
+import { postEvent } from "@tma.js/sdk";
+
 function App() {
   const navigator = useMemo(() => initNavigator("app-navigation-state"), []);
   const [location, reactNav] = useIntegration(navigator as any);
@@ -15,6 +17,9 @@ function App() {
     navigator.attach();
     return () => navigator.detach();
   }, [navigator]);
+
+  postEvent("web_app_expand");
+  postEvent("web_app_setup_main_button", { is_visible: false });
 
   return (
     <Router location={location} navigator={reactNav}>
