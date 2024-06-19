@@ -28,48 +28,62 @@ const MainAppView = () => {
           <h1 style={{ color: "black" }}>Hello</h1>
           <h4 style={{ color: "black" }}>Great to see you again! 🌅😊 </h4>
         </div>
-        <Tabs onSingleTabPress={(index) => setActiveTabIndex(index ?? 0)} activeTabIndex={activeTabIndex}>
-          <Tab>
-            <span
-              style={{
-                fontSize: "12px",
-                textTransform: "capitalize",
-              }}
-            >
-              main
-            </span>
-          </Tab>
-          <Tab>
-            <span
-              style={{
-                fontSize: "12px",
-                textTransform: "capitalize",
-              }}
-            >
-              mining CHL
-            </span>
-          </Tab>
-          <Tab>
-            <span
-              style={{
-                fontSize: "12px",
-                textTransform: "capitalize",
-              }}
-            >
-              tasks
-            </span>
-          </Tab>
-          <Tab>
-            <span
-              style={{
-                fontSize: "12px",
-                textTransform: "capitalize",
-              }}
-            >
-              friends
-            </span>
-          </Tab>
-        </Tabs>
+        <div style={{ display: "flex", justifyContent: "center", alignItems: "center", overflow: "auto", maxWidth: "100%", width: "100%", padding: "4px"}}>
+          <Tabs onSingleTabPress={(index) => setActiveTabIndex(index ?? 0)} activeTabIndex={activeTabIndex}>
+            <Tab>
+              <span
+                style={{
+                  fontSize: "12px",
+                  textTransform: "capitalize",
+                }}
+              >
+                main
+              </span>
+            </Tab>
+            <Tab>
+              <span
+                style={{
+                  fontSize: "12px",
+                  textTransform: "capitalize",
+                  textWrap: "nowrap",
+                }}
+              >
+                mining CHL
+              </span>
+            </Tab>
+            <Tab>
+              <span
+                style={{
+                  fontSize: "12px",
+                  textTransform: "capitalize",
+                }}
+              >
+                tasks
+              </span>
+            </Tab>
+            <Tab>
+              <span
+                style={{
+                  fontSize: "12px",
+                  textTransform: "capitalize",
+                  textWrap: "nowrap",
+                }}
+              >
+                buy NFT
+              </span>
+            </Tab>
+            <Tab>
+              <span
+                style={{
+                  fontSize: "12px",
+                  textTransform: "capitalize",
+                }}
+              >
+                friends
+              </span>
+            </Tab>
+          </Tabs>
+        </div>
         <BlueCard>
           <div
             style={{
@@ -81,7 +95,7 @@ const MainAppView = () => {
             {activeTabIndex === 0 && <MainContentModule />}
             {activeTabIndex === 1 && <MiningPage />}
             {activeTabIndex === 2 && <TasksPage />}
-            {activeTabIndex === 3 && <FriendsPage />}
+            {activeTabIndex === 4 && <FriendsPage />}
           </div>
         </BlueCard>
       </BlockCard>

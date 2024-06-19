@@ -14,12 +14,16 @@ function App() {
   const [location, reactNav] = useIntegration(navigator as any);
 
   useEffect(() => {
-    navigator.attach();
+    if (import.meta.env.PROD) {
+      navigator.attach();
+    }
     return () => navigator.detach();
   }, [navigator]);
 
-  postEvent("web_app_expand");
-  postEvent("web_app_setup_main_button", { is_visible: false });
+  useEffect(() => {
+    postEvent("web_app_expand");
+    postEvent("web_app_setup_main_button", { is_visible: false });
+  }, []);
 
   return (
     <Router location={location} navigator={reactNav}>
