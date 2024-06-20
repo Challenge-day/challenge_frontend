@@ -10,7 +10,7 @@ const MainContentModule = () => {
       <Styled.AmountInfo>
         <Styled.ContainerTitle>Your Balance</Styled.ContainerTitle>
         <Styled.BalanceAmountWrapper>
-          <Icon width={25} height={30} iconId={"icon-e-max"} />
+          <Icon styles={{ fill: "white" }} width={25} height={30} iconId={"icon-e-max"} />
           <Styled.BalanceAmount>1.7M</Styled.BalanceAmount>
         </Styled.BalanceAmountWrapper>
         <Styled.ContainerContent>You’ve got it 👍</Styled.ContainerContent>

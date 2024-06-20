@@ -1,8 +1,9 @@
 interface IServicesInterface {
   error: string | null;
-  isLoading: boolean;
   openModal: boolean;
   modalContent: string;
+  isLoading: boolean,
+  referal: string,
 }
 
 export default IServicesInterface;

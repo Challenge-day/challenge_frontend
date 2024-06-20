@@ -1,16 +1,24 @@
 import { Avatar, BlockCard, BlueCard, Tab, Tabs } from "@challenge.day/uikit";
 import * as Styled from "./components/main-page-module.styled";
 import { actionsCardsData } from "./data/data";
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import MainContentModule from "./main-content.module";
 import TasksPage from "../../tasks/tasks.page";
 import FriendsPage from "../../friends/friends.page";
 import MiningPage from "../../mining/mining.page";
 import { initInitData } from "@tma.js/sdk-react";
+import { getReferal } from "../../../redux/services/servicesThunk";
+import { useAppDispatch } from "../../../redux/hooks";
 
 const MainAppView = () => {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
   const initData = useMemo(() => initInitData(), []);
+  const dispatch = useAppDispatch(); 
+  useEffect(() => {
+    if (initData?.user?.id) {
+      dispatch(getReferal(initData?.user?.id));
+    }
+  }, [dispatch, initData?.user?.id])
 
   return (
     <Styled.ContentSection>
@@ -74,7 +82,7 @@ const MainAppView = () => {
           <div
             style={{
               width: "100%",
-              padding: "8px",
+              padding: "20px",
               textAlign: "center",
             }}
           >

@@ -53,6 +53,7 @@ export const WrapperText = styled.div`
 `;
 
 export const TaskTitle = styled.p`
+text-align: left;
   color: var(--black-100, #050505);
   font-family: Montserrat, sans-serif;
   font-size: 10px;
