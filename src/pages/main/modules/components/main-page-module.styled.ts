@@ -37,6 +37,7 @@ export const MainContent = styled.div`
 export const AmountInfo = styled.div`
   display: grid;
   grid-area: amount-info;
+  text-align: left;
   grid-template-areas:
     "title"
     "balanceAmount"
@@ -75,6 +76,7 @@ export const Container = styled.div`
   grid-area: chart;
   display: flex;
   justify-content: center;
+  margin-bottom: 20px;
 `;
 
 export const Actions = styled.div`

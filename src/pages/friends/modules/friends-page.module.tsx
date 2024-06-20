@@ -1,17 +1,26 @@
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import { friendsList, offersList } from "./data/data";
 import OfferItem from "./offer-item.module";
 import * as Styled from "./components/FriendsPageModule/friends-page-module.styled";
 import FriendItem from "./friend-item.module";
 import { Icon } from "../../../shared/Icon/Icon";
+import Modal from "../../../shared/Modal/Modal";
+import { useAppDispatch } from "../../../redux/hooks";
+import { generateReferal } from "../../../redux/services/servicesThunk";
+import { initInitData } from "@tma.js/sdk";
 
 export default function FriendsPageModule() {
   const [copied, setCopied] = useState<boolean>(false);
+  const initData = useMemo(() => initInitData(), []);
+  const dispatch = useAppDispatch(); 
   const handleClick = () => {
-    setCopied((prevState) => !prevState);
-    setTimeout(() => {
-      setCopied((prevState) => !prevState);
-    }, 2000);
+    if (initData?.user?.id) {
+      dispatch(generateReferal(initData?.user?.id));
+      setCopied(true);
+      setTimeout(() => {
+        setCopied(false);
+      }, 2000);
+    }
   };
   return (
     <Styled.Container>
@@ -35,10 +44,12 @@ export default function FriendsPageModule() {
         </Styled.CopyLinkButton>
       </Styled.CopyLink>
       {copied && (
-        <Styled.LinkCopiedWrapper>
-          <Styled.LinkCopiedText>You copied your referal link. Share it with your friends!</Styled.LinkCopiedText>
-          <Icon width={25} height={25} iconId={"icon-link"} styles={{ fill: "var(--blue-100, #2054f4)" }} />
-        </Styled.LinkCopiedWrapper>
+        <Modal>
+          <Styled.LinkCopiedWrapper>
+            <Styled.LinkCopiedText>You copied your referal link. Share it with your friends!</Styled.LinkCopiedText>
+            <Icon width={25} height={25} iconId={"icon-link"} styles={{ fill: "var(--blue-100, #2054f4)" }} />
+          </Styled.LinkCopiedWrapper>
+        </Modal>
       )}
     </Styled.Container>
   );
