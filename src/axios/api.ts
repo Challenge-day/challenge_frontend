@@ -1,5 +1,6 @@
 import axios from "axios";
 import * as Iinterface from "./interface";
+
 const BASE_URL = "https://challenge-d3v-api.azurewebsites.net/api";
 
 const $instance = axios.create({ baseURL: BASE_URL });
@@ -69,15 +70,15 @@ const $instance = axios.create({ baseURL: BASE_URL });
 // ====================== info_query
 
 export const getData = async ({
-    endPoint,
-    getParams,
+  endPoint,
+  getParams,
 }: Iinterface.IGetDataParams): Promise<Iinterface.IDataResponse> => {
-    const { data } = await $instance.get(endPoint, {
-        params: {
-            ...getParams,
-        },
-    });
-    return data;
+  const { data } = await $instance.get(endPoint, {
+    params: {
+      ...getParams,
+    },
+  });
+  return data;
 };
 //
 //
@@ -133,3 +134,4 @@ export const createUser = async (fetchData: Iinterface.ISignUpData) => {
         console.log(error);
     }
 };
+

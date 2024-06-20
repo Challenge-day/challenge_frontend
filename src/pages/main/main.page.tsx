@@ -1,11 +1,11 @@
-import MainPageModule from "./modules/main-page.module";
+import MainAppView from "./modules/main-app-view";
 
 const MainPage = () => {
-    return (
-        <>
-            <MainPageModule />
-        </>
-    );
+  return (
+    <>
+      <MainAppView />
+    </>
+  );
 };
 
 export default MainPage;
