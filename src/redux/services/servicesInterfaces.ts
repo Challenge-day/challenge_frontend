@@ -1,5 +1,5 @@
 interface IServicesInterface {
-  error: string | null;
+  error: string | unknown;
   openModal: boolean;
   modalContent: string;
   isLoading: boolean,
