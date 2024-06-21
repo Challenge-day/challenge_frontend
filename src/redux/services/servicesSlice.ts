@@ -14,7 +14,7 @@ const handlePending = (state: IServicesInterface) => {
   state.isLoading = true;
 };
 
-const handleRejected = (state: IServicesInterface, action: PayloadAction<null | string>) => {
+const handleRejected = (state: IServicesInterface, action: PayloadAction<string | undefined>) => {
   state.isLoading = false;
   state.error = action.payload;
   };
@@ -39,7 +39,7 @@ const serviceSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(generateReferal.pending, handlePending)
-      .addCase(generateReferal.fulfilled, (state, action: PayloadAction<string>) => {
+      .addCase(generateReferal.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
         state.referal = action.payload;

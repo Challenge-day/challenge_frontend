@@ -7,9 +7,15 @@ interface FetchContactsError {
     message: string;
 }
 
-export const generateReferal = createAsyncThunk(
+export const generateReferal = createAsyncThunk<
+    string,
+    number,
+    {
+        rejectValue: string
+    }
+>(
     'referal/generate',
-    async (id: number, thunkApi) => {
+    async (id, { rejectWithValue }) => {
         try {
             const response = await axios.get(`/api/generate_referral_url/${id}`);
             return response.data;
@@ -21,14 +27,20 @@ export const generateReferal = createAsyncThunk(
             } else {
                 errorMessage = (e as Error).message;
             }
-            return thunkApi.rejectWithValue({ message: errorMessage });
+            return rejectWithValue(errorMessage);
         }
-    }
+    },
 );
 
-export const getReferal = createAsyncThunk(
+export const getReferal = createAsyncThunk<
+    string,
+    number,
+    {
+        rejectValue: string
+    }
+>(
     'referal/get',
-    async (id: number, thunkApi) => {
+    async (id: number, { rejectWithValue }) => {
         try {
             const response = await axios.get(`/api/referral/${id}`);
             return response.data;
@@ -40,7 +52,7 @@ export const getReferal = createAsyncThunk(
             } else {
                 errorMessage = (e as Error).message;
             }
-            return thunkApi.rejectWithValue({ message: errorMessage });
+            return rejectWithValue(errorMessage);
         }
     }
 );
