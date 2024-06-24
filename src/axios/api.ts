@@ -116,22 +116,21 @@ export const getData = async ({
 // Login User
 
 export const loginUser = async (fetchData: Iinterface.ILoginData) => {
-    try {
-        const { data } = await $instance.post("/login/", fetchData);
-        return data;
-    } catch (error) {
-        console.log(error);
-    }
+  try {
+    const { data } = await $instance.post("/login/", fetchData);
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 // Create User
 
 export const createUser = async (fetchData: Iinterface.ISignUpData) => {
-    try {
-        const { data } = await $instance.post("/users/", fetchData);
-        return data;
-    } catch (error) {
-        console.log(error);
-    }
+  try {
+    const { data } = await $instance.post("/users/", fetchData);
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
 };
-

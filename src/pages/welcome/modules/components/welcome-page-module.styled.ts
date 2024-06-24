@@ -20,9 +20,9 @@ export const Title = styled.h1`
 
 export const Description = styled.div`
   color: var(--white-100);
-  font-size: 14px;
+  font-size: 15px;
   font-style: normal;
-  font-weight: 400;
+  font-weight: 300;
   line-height: 150%;
 `;
 

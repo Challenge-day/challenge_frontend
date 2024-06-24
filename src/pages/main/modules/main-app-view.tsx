@@ -13,12 +13,12 @@ import { useAppDispatch } from "../../../redux/hooks";
 const MainAppView = () => {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
   const initData = useMemo(() => initInitData(), []);
-  const dispatch = useAppDispatch(); 
+  const dispatch = useAppDispatch();
   useEffect(() => {
     if (initData?.user?.id) {
       dispatch(getReferal(initData?.user?.id));
     }
-  }, [dispatch, initData?.user?.id])
+  }, [dispatch, initData?.user?.id]);
 
   return (
     <Styled.ContentSection>

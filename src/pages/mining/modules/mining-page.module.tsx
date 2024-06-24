@@ -3,18 +3,18 @@ import { Icon } from "../../../shared/Icon/Icon";
 import {
   Button,
   Container,
+  InstructionDescription,
+  InstructionSlogan,
+  LoaderDot,
   LoaderText,
   LoaderWrapper,
-  LoaderDot,
-  InstructionSlogan,
-  InstructionDescription,
-  WrapperStarted,
   StartedCount,
-  StartedProgress,
-  StartedProgressCount,
   StartedHour,
   StartedHourCount,
+  StartedProgress,
+  StartedProgressCount,
   StartedTotalText,
+  WrapperStarted,
 } from "./components/MiningPageModule/mining-page-module.styled";
 
 export default function MiningPageModule() {
@@ -67,8 +67,17 @@ export default function MiningPageModule() {
           )}
         </LoaderText>
       </LoaderWrapper>
-      <InstructionSlogan>Let's go!</InstructionSlogan>
-      <InstructionDescription>Click the “Start” and begin mining!</InstructionDescription>
+      {status === "Started" ? (
+        <>
+          <InstructionDescription>The accrual process is well underway!</InstructionDescription>
+          <InstructionDescription>Don't forget to come back in two hours!</InstructionDescription>
+        </>
+      ) : (
+        <>
+          <InstructionSlogan>Let's go!</InstructionSlogan>
+          <InstructionDescription>Click the “Start” and begin mining!</InstructionDescription>
+        </>
+      )}
     </Container>
   );
 }

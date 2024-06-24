@@ -30,7 +30,7 @@ export const Button = styled.button<{ status: string }>`
       case "Started":
         return `var(--blue-100, #2054F4);`;
       default:
-        return `var(--white-50, rgba(252, 252, 252, 0.4))`;
+        return `var(--white-100, #FAFBFC)`;
     }
   }};
   text-align: center;
