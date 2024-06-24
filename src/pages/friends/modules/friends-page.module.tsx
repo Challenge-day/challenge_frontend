@@ -12,7 +12,7 @@ import { initInitData } from "@tma.js/sdk";
 export default function FriendsPageModule() {
   const [copied, setCopied] = useState<boolean>(false);
   const initData = useMemo(() => initInitData(), []);
-  const dispatch = useAppDispatch(); 
+  const dispatch = useAppDispatch();
   const handleClick = () => {
     if (initData?.user?.id) {
       dispatch(generateReferal(initData?.user?.id));
