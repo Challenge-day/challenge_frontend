@@ -35,6 +35,7 @@ export const OffersList = styled.ul`
 `;
 
 export const TitleSectionFriend = styled.h3`
+  display: flex;  
   color: var(--white-100, #fafbfc);
   font-family: Montserrat;
   font-size: 14px;
@@ -82,7 +83,7 @@ export const LinkCopiedText = styled.p`
 export const CopyLink = styled.div`
   padding: 5px 20px;
   border-radius: 100px;
-  background: var(--Yellow, #ffee02);
+  background: var(--yellow, #ffee02);
   display: flex;
   align-items: center;
 `;

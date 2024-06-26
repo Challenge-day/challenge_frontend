@@ -42,6 +42,7 @@ const MainAppView = () => {
               style={{
                 fontSize: "12px",
                 textTransform: "capitalize",
+                color: activeTabIndex === 0 ? "var(--white-100)" : "var(--gray-400)",
               }}
             >
               main
@@ -52,6 +53,7 @@ const MainAppView = () => {
               style={{
                 fontSize: "12px",
                 textTransform: "capitalize",
+                color: activeTabIndex === 1 ? "var(--white-100)" : "var(--gray-400)",
               }}
             >
               mining CHL
@@ -62,6 +64,7 @@ const MainAppView = () => {
               style={{
                 fontSize: "12px",
                 textTransform: "capitalize",
+                color: activeTabIndex === 2 ? "var(--white-100)" : "var(--gray-400)",
               }}
             >
               tasks
@@ -72,6 +75,7 @@ const MainAppView = () => {
               style={{
                 fontSize: "12px",
                 textTransform: "capitalize",
+                color: activeTabIndex === 3 ? "var(--white-100)" : "var(--gray-400)",
               }}
             >
               friends
