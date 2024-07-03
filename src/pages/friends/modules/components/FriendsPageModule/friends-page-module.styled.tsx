@@ -3,7 +3,6 @@ import styled from "styled-components";
 export const Container = styled.div`
   border-radius: 25px;
   background: var(--blue-100, #2054f4);
-  padding: 20px;
 `;
 
 export const HeadTitle = styled.h2`
@@ -36,6 +35,7 @@ export const OffersList = styled.ul`
 `;
 
 export const TitleSectionFriend = styled.h3`
+  display: flex;
   color: var(--white-100, #fafbfc);
   font-family: Montserrat;
   font-size: 14px;
@@ -83,7 +83,7 @@ export const LinkCopiedText = styled.p`
 export const CopyLink = styled.div`
   padding: 5px 20px;
   border-radius: 100px;
-  background: var(--Yellow, #ffee02);
+  background: var(--yellow, #ffee02);
   display: flex;
   align-items: center;
 `;

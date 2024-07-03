@@ -15,7 +15,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
     <PersistGate persistor={persistor} loading={"Loader"}>
       <TMAReactSDKProvider acceptCustomStyles debug>
         <TonConnectUIProvider manifestUrl={`${window.location.origin}/tonconnect-manifest.json`}>
-        <App />
+          <App />
         </TonConnectUIProvider>
       </TMAReactSDKProvider>
     </PersistGate>

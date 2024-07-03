@@ -1,11 +1,22 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import IServicesInterface from "./servicesInterfaces";
+import { generateReferal, getReferal } from "./servicesThunk";
 
 const initialState: IServicesInterface = {
   error: null,
   isLoading: false,
   openModal: false,
   modalContent: "",
+  referal: "",
+};
+
+const handlePending = (state: IServicesInterface) => {
+  state.isLoading = true;
+};
+
+const handleRejected = (state: IServicesInterface, action: PayloadAction<string | undefined>) => {
+  state.isLoading = false;
+  state.error = action.payload;
 };
 
 const serviceSlice = createSlice({
@@ -26,7 +37,21 @@ const serviceSlice = createSlice({
     },
   },
   extraReducers: (builder) => {
-    builder;
+    builder
+      .addCase(generateReferal.pending, handlePending)
+      .addCase(generateReferal.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.error = null;
+        state.referal = action.payload;
+      })
+      .addCase(generateReferal.rejected, handleRejected);
+    builder
+      .addCase(getReferal.pending, handlePending)
+      .addCase(getReferal.fulfilled, (state) => {
+        state.isLoading = false;
+        state.error = null;
+      })
+      .addCase(getReferal.rejected, handleRejected);
   },
 });
 
