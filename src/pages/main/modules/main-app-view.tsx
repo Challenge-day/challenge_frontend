@@ -9,11 +9,13 @@ import MiningPage from "../../mining/mining.page";
 import { initInitData } from "@tma.js/sdk-react";
 import { getReferal } from "../../../redux/services/servicesThunk";
 import { useAppDispatch } from "../../../redux/hooks";
+import NFTsPage from "../../nfts/nfts.page";
 
 const MainAppView = () => {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
   const initData = useMemo(() => initInitData(), []);
   const dispatch = useAppDispatch();
+
   useEffect(() => {
     if (initData?.user?.id) {
       dispatch(getReferal(initData?.user?.id));
@@ -36,52 +38,80 @@ const MainAppView = () => {
           <h1 style={{ color: "black" }}>Hello</h1>
           <h4 style={{ color: "black" }}>Great to see you again! 🌅😊 </h4>
         </div>
-        <Tabs onSingleTabPress={(index) => setActiveTabIndex(index ?? 0)} activeTabIndex={activeTabIndex}>
-          <Tab>
-            <span
-              style={{
-                fontSize: "12px",
-                textTransform: "capitalize",
-                color: activeTabIndex === 0 ? "var(--white-100)" : "var(--gray-400)",
-              }}
-            >
-              main
-            </span>
-          </Tab>
-          <Tab>
-            <span
-              style={{
-                fontSize: "12px",
-                textTransform: "capitalize",
-                color: activeTabIndex === 1 ? "var(--white-100)" : "var(--gray-400)",
-              }}
-            >
-              mining CHL
-            </span>
-          </Tab>
-          <Tab>
-            <span
-              style={{
-                fontSize: "12px",
-                textTransform: "capitalize",
-                color: activeTabIndex === 2 ? "var(--white-100)" : "var(--gray-400)",
-              }}
-            >
-              tasks
-            </span>
-          </Tab>
-          <Tab>
-            <span
-              style={{
-                fontSize: "12px",
-                textTransform: "capitalize",
-                color: activeTabIndex === 3 ? "var(--white-100)" : "var(--gray-400)",
-              }}
-            >
-              friends
-            </span>
-          </Tab>
-        </Tabs>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            overflow: "auto",
+            maxWidth: "100%",
+            width: "100%",
+            padding: "4px",
+          }}
+        >
+          <Tabs onSingleTabPress={(index) => setActiveTabIndex(index ?? 0)} activeTabIndex={activeTabIndex}>
+            <Tab>
+              <span
+                style={{
+                  fontSize: "12px",
+                  textTransform: "capitalize",
+                  color: activeTabIndex === 0 ? "var(--white-100)" : "var(--gray-400)",
+                  textWrap: "nowrap",
+                }}
+              >
+                main
+              </span>
+            </Tab>
+            <Tab>
+              <span
+                style={{
+                  fontSize: "12px",
+                  textTransform: "capitalize",
+                  color: activeTabIndex === 1 ? "var(--white-100)" : "var(--gray-400)",
+                  textWrap: "nowrap",
+                }}
+              >
+                mining CHL
+              </span>
+            </Tab>
+            <Tab>
+              <span
+                style={{
+                  fontSize: "12px",
+                  textTransform: "capitalize",
+                  color: activeTabIndex === 2 ? "var(--white-100)" : "var(--gray-400)",
+                  textWrap: "nowrap",
+                }}
+              >
+                tasks
+              </span>
+            </Tab>
+            <Tab>
+              <span
+                style={{
+                  fontSize: "12px",
+                  textTransform: "capitalize",
+                  color: activeTabIndex === 3 ? "var(--white-100)" : "var(--gray-400)",
+                  textWrap: "nowrap",
+                }}
+              >
+                buy NFT
+              </span>
+            </Tab>
+            <Tab>
+              <span
+                style={{
+                  fontSize: "12px",
+                  textTransform: "capitalize",
+                  color: activeTabIndex === 4 ? "var(--white-100)" : "var(--gray-400)",
+                  textWrap: "nowrap",
+                }}
+              >
+                friends
+              </span>
+            </Tab>
+          </Tabs>
+        </div>
         <BlueCard>
           <div
             style={{
@@ -93,7 +123,8 @@ const MainAppView = () => {
             {activeTabIndex === 0 && <MainContentModule />}
             {activeTabIndex === 1 && <MiningPage />}
             {activeTabIndex === 2 && <TasksPage />}
-            {activeTabIndex === 3 && <FriendsPage />}
+            {activeTabIndex === 3 && <NFTsPage />}
+            {activeTabIndex === 4 && <FriendsPage />}
           </div>
         </BlueCard>
       </BlockCard>

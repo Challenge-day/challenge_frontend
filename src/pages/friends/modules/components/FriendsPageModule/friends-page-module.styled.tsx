@@ -35,7 +35,7 @@ export const OffersList = styled.ul`
 `;
 
 export const TitleSectionFriend = styled.h3`
-  display: flex;  
+  display: flex;
   color: var(--white-100, #fafbfc);
   font-family: Montserrat;
   font-size: 14px;
