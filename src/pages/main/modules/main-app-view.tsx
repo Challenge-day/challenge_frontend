@@ -7,7 +7,7 @@ import TasksPage from "../../tasks/tasks.page";
 import FriendsPage from "../../friends/friends.page";
 import MiningPage from "../../mining/mining.page";
 import { initInitData } from "@tma.js/sdk-react";
-import { getReferal } from "../../../redux/services/servicesThunk";
+import { createUser, getReferal } from "../../../redux/services/servicesThunk";
 import { useAppDispatch } from "../../../redux/hooks";
 import NFTsPage from "../../nfts/nfts.page";
 
@@ -17,10 +17,19 @@ const MainAppView = () => {
   const dispatch = useAppDispatch();
 
   useEffect(() => {
-    if (initData?.user?.id) {
+    if (initData?.user) {
       dispatch(getReferal(initData?.user?.id));
+      dispatch(
+        createUser({
+          username: initData?.user?.username ?? "",
+          first_name: initData?.user?.firstName ?? "",
+          last_name: initData?.user?.lastName ?? "",
+          telegram_id: initData?.user?.id,
+          language_code: initData?.user?.languageCode ?? "",
+        }),
+      );
     }
-  }, [dispatch, initData?.user?.id]);
+  }, [dispatch, initData?.user]);
 
   return (
     <Styled.ContentSection>
