@@ -17,7 +17,9 @@ export const generateReferal = createAsyncThunk<
 >("generate_referral_url", async (id, { rejectWithValue }) => {
   try {
     const response = await axios.post(`/api/generate_referral_url/${id}`);
-    return response.data;
+    const data = response.data;
+    await navigator.clipboard.writeText(data.referral_url);
+    return data;
   } catch (e) {
     let errorMessage: string;
     if (axios.isAxiosError(e)) {
