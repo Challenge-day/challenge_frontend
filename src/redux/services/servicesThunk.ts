@@ -14,10 +14,12 @@ export const generateReferal = createAsyncThunk<
   {
     rejectValue: string;
   }
->("referal/generate", async (id, { rejectWithValue }) => {
+>("generate_referral_url", async (id, { rejectWithValue }) => {
   try {
-    const response = await axios.get(`/api/generate_referral_url/${id}`);
-    return response.data;
+    const response = await axios.post(`/api/generate_referral_url/${id}`);
+    const data = response.data;
+    await navigator.clipboard.writeText(data.referral_url);
+    return data;
   } catch (e) {
     let errorMessage: string;
     if (axios.isAxiosError(e)) {
