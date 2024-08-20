@@ -7,7 +7,7 @@ import TasksPage from "../../tasks/tasks.page";
 import FriendsPage from "../../friends/friends.page";
 import MiningPage from "../../mining/mining.page";
 import { initInitData } from "@tma.js/sdk-react";
-import { createUser, getReferal } from "../../../redux/services/servicesThunk";
+import { createUser, sendReferralInfo } from "../../../redux/services/servicesThunk";
 import { useAppDispatch } from "../../../redux/hooks";
 import NFTsPage from "../../nfts/nfts.page";
 
@@ -18,7 +18,14 @@ const MainAppView = () => {
 
   useEffect(() => {
     if (initData?.user) {
-      dispatch(getReferal(initData?.user?.id));
+      if (initData?.startParam && typeof initData?.startParam === "number") {
+        dispatch(
+          sendReferralInfo({
+            telegram_id: initData?.user?.id,
+            referral_id: Number(initData?.startParam ?? "0"),
+          }),
+        );
+      }
       dispatch(
         createUser({
           username: initData?.user?.username ?? "",
