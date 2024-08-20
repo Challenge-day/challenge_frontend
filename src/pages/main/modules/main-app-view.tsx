@@ -20,17 +20,17 @@ const MainAppView = () => {
 
   useEffect(() => {
     if (initData?.user) {
-        // if (initData?.startParam?.includes(challenge_referral_prefix)) {
-        //     const refNumber = initData?.startParam?.replace(challenge_referral_prefix, "");
-        //     if (refNumber && isFinite(parseInt(refNumber))) {
+        if (initData?.startParam?.includes(challenge_referral_prefix)) {
+            const refNumber = initData?.startParam?.replace(challenge_referral_prefix, "");
+            if (refNumber && isFinite(parseInt(refNumber))) {
                 dispatch(
                     sendReferralInfo({
                         telegram_id: initData?.user?.id,
-                        referrer_id: initData?.startParam ?? ''
+                        referrer_id: Number(refNumber ?? "0"),
                     }),
                 );
-            // }
-        // }
+            }
+        }
       dispatch(
         createUser({
           username: initData?.user?.username ?? "",
