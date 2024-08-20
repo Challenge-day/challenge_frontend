@@ -18,11 +18,11 @@ const MainAppView = () => {
 
   useEffect(() => {
     if (initData?.user) {
-      if (initData?.startParam && typeof initData?.startParam === "number") {
+      if (initData?.startParam && isFinite(parseInt(initData?.startParam))) {
         dispatch(
           sendReferralInfo({
             telegram_id: initData?.user?.id,
-            referral_id: Number(initData?.startParam ?? "0"),
+            referrer_id: Number(initData?.startParam ?? "0"),
           }),
         );
       }
@@ -36,7 +36,7 @@ const MainAppView = () => {
         }),
       );
     }
-  }, [dispatch, initData?.user]);
+  }, [dispatch, initData?.user, initData?.startParam]);
 
   return (
     <Styled.ContentSection>
