@@ -22,5 +22,5 @@ export interface ISignUpData {
 
 export interface IReferralData {
   telegram_id: number;
-  referrer_id: number;
+  referrer_id: string;
 }
