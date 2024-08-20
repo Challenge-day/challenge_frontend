@@ -1,6 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios, { AxiosError } from "axios";
-import { ISignUpData } from "../../axios/interface";
+import { IReferralData, ISignUpData } from "../../axios/interface";
 
 axios.defaults.baseURL = "https://challenge-d3v-api.azurewebsites.net/";
 
@@ -32,15 +32,15 @@ export const generateReferal = createAsyncThunk<
   }
 });
 
-export const getReferal = createAsyncThunk<
+export const sendReferralInfo = createAsyncThunk<
   string,
-  number,
+  IReferralData,
   {
     rejectValue: string;
   }
->("referal/get", async (id: number, { rejectWithValue }) => {
+>("api/referral", async (data: IReferralData, { rejectWithValue }) => {
   try {
-    const response = await axios.get(`/api/referral/${id}`);
+    const response = await axios.put(`/api/referral`, data);
     return response.data;
   } catch (e) {
     let errorMessage: string;

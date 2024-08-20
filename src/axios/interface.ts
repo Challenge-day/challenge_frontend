@@ -19,3 +19,8 @@ export interface ISignUpData {
   telegram_id: number;
   language_code: string;
 }
+
+export interface IReferralData {
+  telegram_id: number;
+  referral_id: number;
+}

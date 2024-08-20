@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import IServicesInterface from "./servicesInterfaces";
-import { generateReferal, getReferal } from "./servicesThunk";
+import { generateReferal, sendReferralInfo } from "./servicesThunk";
 
 const initialState: IServicesInterface = {
   error: null,
@@ -46,12 +46,12 @@ const serviceSlice = createSlice({
       })
       .addCase(generateReferal.rejected, handleRejected);
     builder
-      .addCase(getReferal.pending, handlePending)
-      .addCase(getReferal.fulfilled, (state) => {
+      .addCase(sendReferralInfo.pending, handlePending)
+      .addCase(sendReferralInfo.fulfilled, (state) => {
         state.isLoading = false;
         state.error = null;
       })
-      .addCase(getReferal.rejected, handleRejected);
+      .addCase(sendReferralInfo.rejected, handleRejected);
   },
 });
 
