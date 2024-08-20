@@ -11,6 +11,8 @@ import { createUser, sendReferralInfo } from "../../../redux/services/servicesTh
 import { useAppDispatch } from "../../../redux/hooks";
 import NFTsPage from "../../nfts/nfts.page";
 
+const challenge_referral_prefix = "challenged_";
+
 const MainAppView = () => {
   const [activeTabIndex, setActiveTabIndex] = useState(0);
   const initData = useMemo(() => initInitData(), []);
@@ -18,14 +20,17 @@ const MainAppView = () => {
 
   useEffect(() => {
     if (initData?.user) {
-      if (initData?.startParam && isFinite(parseInt(initData?.startParam))) {
-        dispatch(
-          sendReferralInfo({
-            telegram_id: initData?.user?.id,
-            referrer_id: Number(initData?.startParam ?? "0"),
-          }),
-        );
-      }
+        if (initData?.startParam?.includes(challenge_referral_prefix)) {
+            const refNumber = initData?.startParam?.replace(challenge_referral_prefix, "");
+            if (refNumber && isFinite(parseInt(refNumber))) {
+                dispatch(
+                    sendReferralInfo({
+                        telegram_id: initData?.user?.id,
+                        referrer_id: Number(refNumber ?? "0"),
+                    }),
+                );
+            }
+        }
       dispatch(
         createUser({
           username: initData?.user?.username ?? "",
