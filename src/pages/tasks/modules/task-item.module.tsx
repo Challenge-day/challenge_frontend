@@ -5,11 +5,12 @@ interface TaskItemProps {
   title: string;
   count: string;
   status: string;
+  onClick: () => void;
 }
 
-export default function TaskItem({ title, count, status }: TaskItemProps) {
+export default function TaskItem({ title, count, status, onClick }: TaskItemProps) {
   return (
-    <Styled.TaskItem status={status}>
+    <Styled.TaskItem status={status} onClick={onClick}>
       <Styled.WrapperText>
         <Styled.TaskTitle>{title}</Styled.TaskTitle>
         <Styled.TaskButton>

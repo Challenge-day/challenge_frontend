@@ -3,11 +3,14 @@ import { tasksList } from "./data/data";
 import TaskItem from "./task-item.module";
 
 export default function TasksPageModule() {
+  const handleTaskClick = (title: string) => {
+    console.log(`Task clicked: ${title}`); // Добавлен обработчик клика для элементов TaskItem
+  };
   return (
     <Styled.Container>
       <Styled.TasksList>
         {tasksList.map(({ title, count, status }, index) => (
-          <TaskItem key={index} title={title} count={count} status={status} />
+          <TaskItem key={index} title={title} count={count} status={status} onClick={() => handleTaskClick} />
         ))}
       </Styled.TasksList>
     </Styled.Container>
