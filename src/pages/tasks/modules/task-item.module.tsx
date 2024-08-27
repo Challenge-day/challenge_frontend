@@ -10,6 +10,7 @@ interface TaskItemProps {
 
 export default function TaskItem({ title, count, status, onClick }: TaskItemProps) {
   return (
+    // <Styled.TaskItem status={status} onClick={onClick}>
     <Styled.TaskItem status={status} onClick={onClick}>
       <Styled.WrapperText>
         <Styled.TaskTitle>{title}</Styled.TaskTitle>
