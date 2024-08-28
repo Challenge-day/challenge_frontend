@@ -3,8 +3,17 @@ import * as Styled from "./components/TasksPageModule/tasks-page-module.styled";
 import { tasksList } from "./data/data";
 import TaskItem from "./task-item.module";
 import OpenOverlay from "../../modal/modules/OpenOverlayPending.module";
+import { useDispatch } from "react-redux";
+import { selectLoading, selectTask } from "../../../redux/task/selectors";
+import { useSelector } from "react-redux";
+import { selectError } from "../../../redux/services/servicesSlice";
 
 const TaskPageModule: React.FC = () => {
+  const dispatch = useDispatch();
+  const task = useSelector(selectTask);
+  const loading = useSelector(selectLoading);
+  const error = useSelector(selectError);
+
   const [isOverlayOpen, setIsOverlayOpen] = useState(false);
   const [selectedTask, setSelectedTask] = useState<string | null>(null);
 
@@ -21,6 +30,9 @@ const TaskPageModule: React.FC = () => {
     setIsOverlayOpen(false);
     setSelectedTask(null);
   };
+
+  if (loading) return <p>Loading...</p>;
+  if (error) return <p>Error....</p>;
   return (
     <Styled.Container>
       <Styled.TasksList>
