@@ -63,9 +63,8 @@ export const Btn = styled.button`
   line-height: 150%; /* 22.5px */
 `;
 
-export const Img = styled.div`
+export const Img = styled.img`
   width: 90px;
   height: 90px;
-  display: flex;
-  background-image: url("../../images/Oops.png"); /* Исправленный путь */
+  object-fit: contain;
 `;
