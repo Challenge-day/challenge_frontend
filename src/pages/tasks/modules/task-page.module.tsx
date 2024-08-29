@@ -15,20 +15,20 @@ const TaskPageModule: React.FC = () => {
   const error = useSelector(selectError);
 
   const [isOverlayOpen, setIsOverlayOpen] = useState(false);
-  const [selectedTask, setSelectedTask] = useState<string | null>(null);
+  const [selectedStatus, setSelectedStatus] = useState<"Pending" | "Canceled" | null>(null);
 
-  const handleTaskClick = (title: string, status: string) => {
+  const handleTaskClick = (status: "Pending" | "Canceled") => {
     console.log(`Clicked on task with status: ${status}`);
 
-    if (status === "Pending") {
-      setSelectedTask(title);
+    if (status === "Pending" || status === "Canceled") {
+      setSelectedStatus(status);
       setIsOverlayOpen(true);
     }
   };
 
   const handleCloseOverlay = () => {
     setIsOverlayOpen(false);
-    setSelectedTask(null);
+    setSelectedStatus(null);
   };
 
   if (loading) return <p>Loading...</p>;
@@ -42,11 +42,11 @@ const TaskPageModule: React.FC = () => {
             title={title}
             count={count}
             status={status}
-            onClick={() => handleTaskClick(title, status)}
+            onClick={() => handleTaskClick((status as "Pending") || "Canceled")}
           />
         ))}
       </Styled.TasksList>
-      {isOverlayOpen && <OpenOverlay onClose={handleCloseOverlay} />}
+      {isOverlayOpen && selectedStatus && <OpenOverlay status={selectedStatus} onClose={handleCloseOverlay} />}
     </Styled.Container>
   );
 };
