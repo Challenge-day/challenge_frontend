@@ -1,5 +1,6 @@
 import React from "react";
 import * as Styled from "./components/OpenOverlayPending.styled";
+import oopsImg from "../images/Oops.png"
 
 interface OpenOverlayProps {
   onClose: () => void;
@@ -32,7 +33,7 @@ const OpenOverlay: React.FC<OpenOverlayProps> = ({ onClose, status }) => {
     <Styled.Container onTouchStart={handleBackgroundClick}>
       <Styled.Card>
         <div>
-          <Styled.Img />
+          <Styled.Img src={oopsImg} />
           <Styled.TextH3>{title}</Styled.TextH3>
           <Styled.TextP>{message}</Styled.TextP>
         </div>
