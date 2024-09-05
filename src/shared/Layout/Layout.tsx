@@ -8,7 +8,7 @@ const Layout = () => {
     <>
       <main>
         <Suspense fallback={<div>Loading...</div>}>
-          <Header style={{ width: "100%" }}>
+          {/* <Header style={{ width: "100%" }}>
             <button style={{ background: "transparent", outline: "none", padding: "10px" }}>
               <span
                 style={{
@@ -49,7 +49,7 @@ const Layout = () => {
             >
               <FiMoreHorizontal color="#bcbfc6" size={24} />
             </button>
-          </Header>
+          </Header> */}
           <Outlet />
         </Suspense>
       </main>

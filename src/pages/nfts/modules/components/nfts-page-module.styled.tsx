@@ -33,3 +33,9 @@ export const ActionsContainer = styled.div`
   align-items: center;
   width: 100%;
 `;
+
+export const Img = styled.img`
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+`;

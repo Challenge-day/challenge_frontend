@@ -67,4 +67,6 @@ export const Img = styled.img`
   width: 90px;
   height: 90px;
   object-fit: contain;
+  display: block;
+  margin: 60px auto 20px auto;
 `;
