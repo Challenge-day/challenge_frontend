@@ -20,17 +20,17 @@ const MainAppView = () => {
 
   useEffect(() => {
     if (initData?.user) {
-        if (initData?.startParam?.includes(challenge_referral_prefix)) {
-            const refNumber = initData?.startParam?.replace(challenge_referral_prefix, "");
-            if (refNumber && isFinite(parseInt(refNumber))) {
-                dispatch(
-                    sendReferralInfo({
-                        telegram_id: initData?.user?.id,
-                        referrer_id: Number(refNumber ?? "0"),
-                    }),
-                );
-            }
+      if (initData?.startParam?.includes(challenge_referral_prefix)) {
+        const refNumber = initData?.startParam?.replace(challenge_referral_prefix, "");
+        if (refNumber && isFinite(parseInt(refNumber))) {
+          dispatch(
+            sendReferralInfo({
+              telegram_id: initData?.user?.id,
+              referrer_id: Number(refNumber ?? "0"),
+            }),
+          );
         }
+      }
       dispatch(
         createUser({
           username: initData?.user?.username ?? "",
@@ -51,13 +51,58 @@ const MainAppView = () => {
             <Avatar src={initData?.user?.photoUrl ?? actionsCardsData[0].image} alt="w" isFullyRounded size="min" />
           </div>
           <div>
-            <p style={{ color: "black" }}>{initData?.user?.username ?? "Name"}</p>
-            <p style={{ color: "black" }}>10 days in Challenge</p>
+            <p
+              style={{
+                color: "black",
+                fontFamily: "Montserrat",
+                fontSize: "16px",
+                fontStyle: "normal",
+                fontWeight: "400",
+                lineHeight: "150%",
+              }}
+            >
+              {initData?.user?.username ?? "Name"}
+            </p>
+            <p
+              style={{
+                color: "var(--Gray-300, #676565)",
+                fontFamily: "Montserrat",
+                fontSize: "10px",
+                fontStyle: "normal",
+                fontWeight: 500,
+                lineHeight: "130%",
+              }}
+            >
+              10 days in Challenge
+            </p>
           </div>
         </div>
         <div>
-          <h1 style={{ color: "black" }}>Hello</h1>
-          <h4 style={{ color: "black" }}>Great to see you again! 🌅😊 </h4>
+          <h1
+            style={{
+              color: "var(--Black-100, #050505)",
+              fontFamily: "Montserrat",
+              fontSize: "24px",
+              fontStyle: "normal",
+              fontWeight: 500,
+              lineHeight: "120%",
+            }}
+          >
+            Hello
+          </h1>
+
+          <h4
+            style={{
+              color: "var(--Black-100, #050505)",
+              fontFamily: "Montserrat",
+              fontSize: "20px",
+              fontStyle: "normal",
+              fontWeight: 500,
+              lineHeight: "120%",
+            }}
+          >
+            Great to see you again! 🌅😊
+          </h4>
         </div>
         <div
           style={{

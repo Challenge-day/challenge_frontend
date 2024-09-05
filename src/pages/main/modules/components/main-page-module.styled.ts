@@ -48,13 +48,21 @@ export const AmountInfo = styled.div`
 export const ContainerTitle = styled.h1`
   grid-area: title;
   color: var(--white-100);
+  font-family: Montserrat;
   font-size: 20px;
+  font-style: normal;
   font-weight: 500;
+  line-height: 120%; /* 24px */
 `;
 
 export const ContainerContent = styled.div`
   grid-area: content;
   color: var(--white-100);
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%; /* 18.2px */
 `;
 
 export const BalanceAmountWrapper = styled.div`

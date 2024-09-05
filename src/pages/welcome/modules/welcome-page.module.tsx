@@ -8,7 +8,7 @@ const WelcomePageModule = () => {
     <>
       <Styled.MainWrapper>
         <Styled.MainContent>
-          <Styled.Title>THE FUTURE</Styled.Title>
+          <Styled.Title>THE FUTURE.</Styled.Title>
           <Styled.Description>
             Combining the features of SocialFi and DeFi and rewarding users for completing real-life challenges.
           </Styled.Description>
