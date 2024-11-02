@@ -24,3 +24,8 @@ export interface IReferralData {
   telegram_id: number;
   referrer_id: number;
 }
+
+export interface IUserResponse {
+  user_info: ISignUpData;
+  auth_data: ILoginData;
+}
